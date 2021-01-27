@@ -1,65 +1,54 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import { GetStaticProps } from "next";
+import Layout, { siteTitle } from "../components/Layout/mainLayout/layout";
+import { fetchPostsNames } from "../lib/projects";
+import ProjectCard from "../components/Projects/ProjectCard/ProjectCard";
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+export const getStaticProps: GetStaticProps = async (context) => {
+	const posts = await fetchPostsNames();
+	const projectsMetadata = posts.map((post) => require(`../content/projects/${post}`).meta);
+	return {
+		props: {
+			projectsMetadata
+		},
+	};
+};
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+let name = "David Angeles";
+let header = (
+	<div className="p-8 items-center">
+		{/* MODIFY */}
+		<img src="/images/profile.jpg" className="w-32 h-32 md:w-48 md:h-auto  rounded-full mx-auto" alt={name} />
+		<h1 className="text-6xl font-semibold">{name}</h1>
+	</div>
+);
+export default function Home({ projectsMetadata }: { projectsMetadata: ProjectPostMeta[] }) {
+	return (
+		<Layout home header={header}>
+			<Head>
+				<title>{siteTitle}</title>
+			</Head>
+			<div className="p-2 mx-auto max-w-4xl">
+				<section className={"text-xl my-4"}>
+					<p>
+						Hi there! I'm <b>David</b>. I'm an mechanical engineer and a software developer. Currently my site is under
+						construction, so the current look is not final {":)"}
+					</p>
+				</section>
+				<section className={" my-4"}>
+					<h1 className={"font-semibold my-2"}>Projects</h1>
+					<ul className={"m-2"}>
+						{projectsMetadata.map(({ id, date, title, keywords, mainImage, images }) => {
+							let imageRoute = !images ? undefined : !mainImage ? images[0] : images[mainImage];
+							return (
+								<li key={id}>
+									<ProjectCard id={id} date={date} title={title} keywords={keywords} image={imageRoute} />
+								</li>
+							);
+						})}
+					</ul>
+				</section>
+			</div>
+		</Layout>
+	);
 }
