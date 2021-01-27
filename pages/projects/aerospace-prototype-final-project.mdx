@@ -1,0 +1,30 @@
+import ProjectPost from '../../components/Projects/ProjectPost/ProjectPost.tsx';
+
+export const meta={
+    title: 'Aerospace Prototypes Final Project',
+    date: '2018-05-01',
+    keywords: ['SolidWorks','ANSYS Workbench','Mechanical Desing','Aerodynamics'],
+    images: ['Airplane Cool View.png', 'Airplane Front View.png', 'Airplane Side View.png','Airplane Wood.png','Matlab Tool Aerodynamics.png','Wing Structural.png','XFLR5.png'].map(item=>'/images/projects/Aerospace Prototypes/'+item),
+    mainImage: 0,
+    id:'aerospace-prototype-final-project'
+}
+
+export default ({children})=><ProjectPost meta={meta}> {children} </ProjectPost>
+
+# Project Descrition
+For the Final Project for my class in Aerospace Prototypes in my bachelor we were tasked on designing a cargo aircraft given the powerplant constraints. The objective was to design an aircraft capable on lifting the most payload as possible.
+
+The aircraft was designed to carry a 20 lbs payload with the restriction of the electric power. With the objective to reduce the quantity of parts needed to be welded or machined (Which is how traditionally our  university's SAE Aerodesign aircraft have been designing the structure) most of this aircraft's structure is designed with Balsa wood and Sitka spruce. 
+
+For sizing the Aircraft we developed a Matlab script in which it computed the Aerodynamics with XFLR5.
+The Airplane was modeled with use of SolidWorks and structurally analyzed with Ansys Mechanical. 
+
+
+# Model 
+The following IFrame shows our model that we designed. Feel free to play around with it. Unfortunately some of the parts in the model  where not correctly interpreted in the Autodesk360 viewer (For example, the Rudder ).
+
+
+<br/>  
+<iframe src="https://myhub.autodesk360.com/ue2ba8999/shares/public/SH7f1edQT22b515c761eb82978d5da9a8211?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+
+<br/>  
