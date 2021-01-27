@@ -10,27 +10,29 @@ export interface Props {
 	instagramLink?: string;
 	youtubeLink?: string;
 }
+const iconClass = "fa-3x";
+
 const SocialBar: FunctionComponent<Props> = ({ className, email, githubLink, instagramLink, youtubeLink }) => {
 	return (
 		<div className={className}>
 			{githubLink ? (
-				<a href={githubLink}>
-					<FontAwesomeIcon icon={faGithub} color={"6f42c1"} className="h-16 w-16 mx-2" />
+				<a href={githubLink} className="mx-2">
+					<FontAwesomeIcon icon={faGithub} color={"6f42c1"} className={iconClass} />
 				</a>
 			) : null}
 			{youtubeLink ? (
-				<a href={youtubeLink}>
-					<FontAwesomeIcon icon={faYoutube} color={"#FF0000"} className="h-16 w-16 mx-2" />
+				<a href={youtubeLink} className="mx-2">
+					<FontAwesomeIcon icon={faYoutube} color={"#FF0000"} className={iconClass} />
 				</a>
 			) : null}
 			{instagramLink ? (
-				<a href={instagramLink}>
-					<FontAwesomeIcon icon={faInstagram} className="h-16 w-16 mx-2" />
+				<a href={instagramLink} className="mx-2">
+					<FontAwesomeIcon icon={faInstagram} className={iconClass} />
 				</a>
 			) : null}
 			{email ? (
-				<a href={email}>
-					<FontAwesomeIcon icon={faEnvelope} className="h-16 w-16 mx-2" />
+				<a href={email} className="mx-2">
+					<FontAwesomeIcon icon={faEnvelope} className={iconClass} />
 				</a>
 			) : null}
 		</div>
@@ -38,4 +40,3 @@ const SocialBar: FunctionComponent<Props> = ({ className, email, githubLink, ins
 };
 
 export default SocialBar;
-

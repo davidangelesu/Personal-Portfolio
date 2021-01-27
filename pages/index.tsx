@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { GetStaticProps } from "next";
+import { motion } from "framer-motion";
 import Layout, { siteTitle } from "../components/Layout/mainLayout/layout";
 import { fetchPostsFileNames } from "../lib/projects";
 import ProjectCard from "../components/Projects/ProjectCard/ProjectCard";
@@ -45,9 +46,9 @@ export default function Home({ projectsMetadataWithId }: { projectsMetadataWithI
 						{projectsMetadataWithId.map(({ id, date, title, keywords, mainImage, images }) => {
 							let imageRoute = !images ? undefined : !mainImage ? images[0] : images[mainImage];
 							return (
-								<li key={id}>
+								<motion.li key={id} whileHover={{ zIndex: 1, scale: 1.2, transition: { duration: 0.2 } }}>
 									<ProjectCard id={id} date={date} title={title} keywords={keywords} image={imageRoute} />
-								</li>
+								</motion.li>
 							);
 						})}
 					</ul>

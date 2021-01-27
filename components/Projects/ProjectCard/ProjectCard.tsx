@@ -13,9 +13,13 @@ interface Props {
 const ProjectCard: FunctionComponent<Props> = ({ id, title, date, keywords, image }) => {
 	return (
 		<Link href={`/projects/${id}`}>
-			<a className={" hover:border-transparent hover:shadow-lg group block rounded-xl  m-2 border border-gray-200 "}>
+			<a
+				className={
+					" hover:border-transparent hover:shadow-lg group block rounded-xl  m-2 border border-gray-200 bg-white"
+				}
+			>
 				<div className="flex flex-col md:flex-row">
-					{image ? <img src={image} className=" w-full md:w-32 h-36 object-cover my-auto" /> : null}
+					{image ? <img src={image} className=" w-full md:w-32 h-36 object-cover my-auto rounded-l-xl" /> : null}
 					<div className="m-4">
 						<h2 className={"font-semibold"}>{title}</h2>
 						<br />
