@@ -1,8 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../Layout/mainLayout/layout";
-import Date from "../../Date/date";
-import SocialBar from "../../SocialBar/SocialBar";
+import ProjectTitle from "../ProjectTitle/ProjectTitle";
 import { FunctionComponent } from "react";
 
 interface ProjectPostProps {
@@ -15,6 +14,7 @@ const ProjectPost: FunctionComponent<ProjectPostProps> = ({ meta, children }) =>
 		const mainImageRoute = meta.mainImage ? meta.images[meta.mainImage] : meta.images[0];
 		mainImage = <img src={mainImageRoute} className="inset-0 w-full h-full md:h-80 object-cover filter-grayscale " />;
 	}
+
 	return (
 		<Layout>
 			<Head>
@@ -22,25 +22,22 @@ const ProjectPost: FunctionComponent<ProjectPostProps> = ({ meta, children }) =>
 			</Head>
 			<article>
 				<div className="mb-8">
-					<div className="max-w-4xl mx-auto p-4">
-						<h1 className="text-6xl">{meta.title}</h1>
-						<div className="flex flex-row justify-between my-4">
-							<div className="text-gray-500">
-								<Date dateString={meta.date} />
-							</div>
-							<SocialBar className="flex" githubLink={meta.githubRepository} youtubeLink={meta.youtubeVideoLink} />
-						</div>
-					</div>
+					<ProjectTitle
+						title={meta.title}
+						date={meta.date}
+						youtubeLink={meta.youtubeVideoLink}
+						githubLink={meta.githubRepository}
+					/>
 					{mainImage}
 				</div>
-				{children}
+				<div className="p-2 mx-auto max-w-4xl">{children}</div>
 			</article>
 			<div className=" max-w-4xl mx-auto my-8">
 				<Link href="/">
 					<button
 						type="button"
 						className="bg-black  text-white text-xl justify-center font-semibold px-6 py-2 rounded-lg
-						hover:border-transparent hover:shadow-lg"
+							hover:border-transparent hover:shadow-lg"
 					>
 						Back
 					</button>

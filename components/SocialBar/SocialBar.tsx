@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-interface Props {
+export interface Props {
 	className?: string;
 	email?: string;
 	githubLink?: string;
@@ -38,3 +38,4 @@ const SocialBar: FunctionComponent<Props> = ({ className, email, githubLink, ins
 };
 
 export default SocialBar;
+

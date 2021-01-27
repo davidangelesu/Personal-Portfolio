@@ -1,15 +1,19 @@
 import Head from "next/head";
 import { GetStaticProps } from "next";
 import Layout, { siteTitle } from "../components/Layout/mainLayout/layout";
-import { fetchPostsNames } from "../lib/projects";
+import { fetchPostsFileNames } from "../lib/projects";
 import ProjectCard from "../components/Projects/ProjectCard/ProjectCard";
 
 export const getStaticProps: GetStaticProps = async (context) => {
-	const posts = await fetchPostsNames();
-	const projectsMetadata = posts.map((post) => require(`../content/projects/${post}`).meta);
+	const postsFileNames = await fetchPostsFileNames();
+	const projectsMetadataWithId = postsFileNames
+		.map((post) => {
+			return { ...require(`../content/projects/${post}`).meta, id: post.replace(".mdx", "") } as ProjectPostMetaWithId;
+		})
+		.sort((a, b) => (a.id < b.id ? 1 : -1));
 	return {
 		props: {
-			projectsMetadata
+			projectsMetadataWithId,
 		},
 	};
 };
@@ -22,7 +26,7 @@ let header = (
 		<h1 className="text-6xl font-semibold">{name}</h1>
 	</div>
 );
-export default function Home({ projectsMetadata }: { projectsMetadata: ProjectPostMeta[] }) {
+export default function Home({ projectsMetadataWithId }: { projectsMetadataWithId: ProjectPostMetaWithId[] }) {
 	return (
 		<Layout home header={header}>
 			<Head>
@@ -36,9 +40,9 @@ export default function Home({ projectsMetadata }: { projectsMetadata: ProjectPo
 					</p>
 				</section>
 				<section className={" my-4"}>
-					<h1 className={"font-semibold my-2"}>Projects</h1>
+					<h1 className={"font-semibold my-2"}>Selected Projects</h1>
 					<ul className={"m-2"}>
-						{projectsMetadata.map(({ id, date, title, keywords, mainImage, images }) => {
+						{projectsMetadataWithId.map(({ id, date, title, keywords, mainImage, images }) => {
 							let imageRoute = !images ? undefined : !mainImage ? images[0] : images[mainImage];
 							return (
 								<li key={id}>
