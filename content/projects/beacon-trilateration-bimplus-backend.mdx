@@ -1,4 +1,5 @@
 import ProjectPost from '../../components/Projects/ProjectPost/ProjectPost.tsx';
+import YoutubeVideo from '../../components/YoutubeVideo/YoutubeVideo.tsx';
 
 export const meta={
     title: 'Backend for Beacon Trilateration Web App with Bimplus',
@@ -15,6 +16,21 @@ export const meta={
 
 export default ({children,meta})=><ProjectPost meta={meta}> {children} </ProjectPost>
 
-Here I should add more info....
+# Project Description
+For our Software Lab Project , we proposed developing a Web application that can track Users in real time by utilizing BLE Beacons and also utilize BIMPlus for setting up the project and visualizing the user location.
+For this, we decided on developing an Android App that will measure the approximate distances to the BLE Beacons and post those measurements to our Backend.
+We also developed a Frontend in React to visualize and to set up our application. 
 
-LOLOLO
+This Page will focus mainly on the **Backend**.
+
+# Project Video
+
+<YoutubeVideo className={'mhy-8'}youtubeEmbededLink='https://www.youtube.com/embed/_QsF3JiuzKY'/>
+<br/>
+
+# Application Architecture
+
+Our Application architecture is represented in the following image. We decided that most of our comunication will be done through a REST API.
+The main server, which runs on Node.js,
+
+![App Architecture](/images/projects/Bimplus%20Tracking%20Backend/App%20Architecture.png)

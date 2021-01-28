@@ -12,19 +12,35 @@ export const meta={
 export default ({children,meta})=><ProjectPost meta={meta}> {children} </ProjectPost>
 
 # Project Descrition
-For the Final Project for my class in Aerospace Prototypes in my bachelor we were tasked on designing a cargo aircraft given the powerplant constraints. The objective was to design an aircraft capable on lifting the most payload as possible.
+For the Final Project of my class in Aerospace Prototypes in my bachelor we were tasked on designing a cargo aircraft that could lift the most Payload given some propulsion constraints.
 
-The aircraft was designed to carry a 20 lbs payload with the restriction of the electric power. With the objective to reduce the quantity of parts needed to be welded or machined (Which is how traditionally our  university's SAE Aerodesign aircraft have been designing the structure) most of this aircraft's structure is designed with Balsa wood and Sitka spruce. 
+With the objective of trying to desing an airplane differently as our previous experiences(From our participation in the university's SAE Aerodesign team), we set the task for ourself on designing the aircraft with more wood as previously done.
+The idea was reduce the quantity of parts needed to be welded or machined, as it conventionally has been done in our university, and design as much as possible with Balsa wood and Sitka spruce, as other Universities' Team commonly do.
+ 
+# Design Process
 
-For sizing the Aircraft we developed a Matlab script in which it computed the Aerodynamics with XFLR5.
-The Airplane was modeled with use of SolidWorks and structurally analyzed with Ansys Mechanical. 
+We modeled our design Proposals with Solidworks. We also tried to drive our designs with global sketches and parameters, allowing us to quickly vary the dimensioning of our aircraft and evaluate its performance with the different sizing.
 
+After some team discussions and some preeliminary evaluations of the different design Proposals, we decided which configuration we were going to mainly focus on for the optimization of it.
 
 # Model 
 The following IFrame shows our model that we designed. Feel free to play around with it. Unfortunately some of the parts in the model  where not correctly interpreted in the Autodesk360 viewer (For example, the Rudder ).
 
 
 <br/>  
-<iframe src="https://myhub.autodesk360.com/ue2ba8999/shares/public/SH7f1edQT22b515c761eb82978d5da9a8211?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+<iframe src="https://myhub.autodesk360.com/ue2ba8999/shares/public/SH7f1edQT22b515c761eb82978d5da9a8211?mode=embed" width="100%" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
 
 <br/>  
+
+
+# Analysis
+
+We programmed a Matlab script for running different Aerodynamic Analysis  through XFLR5. We evaluated over a thousand configuration with our simplified Aerodynamic model so that we could obtain an idea on the sizing design space that we were going to focus.
+We also statically structurally analyzed the aircraft by using Ansys Mechanical & we connected our Solidworks CAD model with Ansys, allowing us to quickly structurally analyse the aircraft. 
+
+
+![Aircraft CoolView](/images/projects/Aerospace%20Prototypes/Airplane%20Side%20View.png)
+
+# Performance 
+
+Our Aircraft design was simpler compared to our Universities' traditional designs and had a better theoretical performance relative to our Univerities' designs.

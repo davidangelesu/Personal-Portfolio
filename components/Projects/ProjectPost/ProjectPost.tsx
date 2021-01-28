@@ -3,10 +3,19 @@ import Layout from "../../Layout/mainLayout/layout";
 import ProjectTitle from "../ProjectTitle/ProjectTitle";
 import PhotoGallery from "../../PhotoGallery/PhotoGallery";
 import { FunctionComponent } from "react";
+import { MDXProvider, MDXProviderComponents } from "@mdx-js/react";
 
 interface ProjectPostProps {
 	meta: ProjectPostMeta;
 }
+
+const customComponents: MDXProviderComponents = {
+	h1: (props) => <h1 className="mb-8" {...props}></h1>,
+	h2: (props) => <h1 className="mb-6" {...props}></h1>,
+	p: (props) => <p className="my-3.5" {...props}></p>,
+
+};
+
 const ProjectPost: FunctionComponent<ProjectPostProps> = ({ meta, children }) => {
 	//define Main Image;
 	let mainImage: JSX.Element | undefined = undefined;
@@ -31,7 +40,7 @@ const ProjectPost: FunctionComponent<ProjectPostProps> = ({ meta, children }) =>
 					{mainImage}
 				</div>
 				<div className="p-2 mx-auto max-w-4xl">
-					{children}
+					<MDXProvider components={customComponents}>{children}</MDXProvider>
 					{meta.images && <PhotoGallery photos={meta.images} />}
 				</div>
 			</article>
