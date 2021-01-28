@@ -29,7 +29,7 @@ const Layout: FunctionComponent<Props> = ({ header, children,navBar }) => {
 					{header}
 				</AnimatePresence>
 			</header>
-			<div className="my-12">
+			<div className="my-2 md:my-6 lg:my-12">
 				<main>
 					<AnimatePresence>{children}</AnimatePresence>
 				</main>
