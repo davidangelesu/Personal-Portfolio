@@ -6,7 +6,7 @@ export default function About() {
 		<Layout>
 			<section className="p-8 items-center">
 				<motion.img
-					src="/images/Profile.jpg"
+					src="/images/profile.jpg"
 					className="w-32== h-32 md:w-48 md:h-auto lg:w-64  rounded-full mx-auto shadow-lg"
 					alt="Profile"
 					whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}
