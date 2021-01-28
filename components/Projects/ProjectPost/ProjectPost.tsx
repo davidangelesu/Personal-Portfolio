@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Layout from "../../Layout/mainLayout/layout";
 import ProjectTitle from "../ProjectTitle/ProjectTitle";
+import PhotoGallery from "../../PhotoGallery/PhotoGallery";
 import { FunctionComponent } from "react";
 
 interface ProjectPostProps {
@@ -29,7 +30,10 @@ const ProjectPost: FunctionComponent<ProjectPostProps> = ({ meta, children }) =>
 					/>
 					{mainImage}
 				</div>
-				<div className="p-2 mx-auto max-w-4xl">{children}</div>
+				<div className="p-2 mx-auto max-w-4xl">
+					{children}
+					{meta.images && <PhotoGallery photos={meta.images} />}
+				</div>
 			</article>
 		</Layout>
 	);

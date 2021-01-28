@@ -1,4 +1,4 @@
-import React, { useState, FunctionComponent } from "react";
+import React, {  FunctionComponent } from "react";
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 
