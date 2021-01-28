@@ -26,7 +26,7 @@ const AnimatedIntro = ({ onClickHandler }: IProps) => {
 						initial="hidden"
 						animate="shown"
 						custom={i}
-						className=" text-4xl sm:text-7xl font-bold hover:underline text-white inline-block"
+						className=" text-4xl sm:text-7xl font-semibold hover:underline text-white inline-block"
 						whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}
 					>
 						{message}

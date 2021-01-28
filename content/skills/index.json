@@ -1,0 +1,48 @@
+{
+
+    "Programming Languages": [{
+        "name": "Typescript",
+        "image": "/images/skills/Typescript.png"
+    }, {
+        "name": "Javascript",
+        "image": "/images/skills/Javascript.png"
+    }, {
+        "name": "C++",
+        "image": "/images/skills/C++.png"
+    }, {
+        "name": "Python",
+        "image": "/images/skills/Python.png"
+    }],
+    "Front-End": [{
+        "name": "React",
+        "image": "/images/skills/React.png"
+    }],
+    "Back-End": [{
+        "name": "Node.js",
+        "image": "/images/skills/Nodejs.png"
+    }, {
+        "name": "Express",
+        "image": "/images/skills/Express.png"
+    }, {
+        "name": "MongoDB",
+        "image": "/images/skills/MongoDB-Emblem.jpg"
+    }, {
+        "name": "MySQL",
+        "image": "/images/skills/Mysql_logo.png"
+    }],
+    "CAD": [{
+        "name": "Solidworks",
+        "image": "/images/skills/Solidworks.png"
+    }, {
+        "name": "CATIA V5",
+        "image": "/images/skills/CATIAV5.png"
+    }],
+    "CAE": [{
+        "name": "ANSYS Workbench",
+        "image": "/images/skills/Ansys.jpg"
+    }],
+    "CAM": [{
+        "name": "HSMWorks",
+        "image": "/images/skills/HSMWorks.jpg"
+    }]
+}

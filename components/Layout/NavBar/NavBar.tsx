@@ -24,9 +24,9 @@ const NavBar = () => {
 					</Link>
 				</li>
 				<li className="flex flex-col">
-					<Link href="/works">
+					<Link href="/projects">
 						<motion.a id="home" className="menu-item m-auto" variants={AnchorVariants} whileHover="hovering">
-							Works
+							Projects
 						</motion.a>
 					</Link>
 				</li>
@@ -34,6 +34,13 @@ const NavBar = () => {
 					<Link href="/about">
 						<motion.a id="home" className="menu-item m-auto " variants={AnchorVariants} whileHover="hovering">
 							About
+						</motion.a>
+					</Link>
+				</li>
+				<li className="flex flex-col">
+					<Link href="/skills">
+						<motion.a id="home" className="menu-item m-auto " variants={AnchorVariants} whileHover="hovering">
+							Skills
 						</motion.a>
 					</Link>
 				</li>

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import Layout from "../../Layout/mainLayout/layout";
 import ProjectTitle from "../ProjectTitle/ProjectTitle";
 import { FunctionComponent } from "react";

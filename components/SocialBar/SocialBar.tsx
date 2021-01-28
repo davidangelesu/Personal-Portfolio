@@ -9,10 +9,18 @@ export interface Props {
 	githubLink?: string;
 	instagramLink?: string;
 	youtubeLink?: string;
+	bigIcons?: boolean;
 }
-const iconClass = "fa-3x";
+const SocialBar: FunctionComponent<Props> = ({
+	className,
+	email,
+	githubLink,
+	instagramLink,
+	youtubeLink,
+	bigIcons,
+}) => {
+	const iconClass = bigIcons ? "fa-6x" : "fa-3x";
 
-const SocialBar: FunctionComponent<Props> = ({ className, email, githubLink, instagramLink, youtubeLink }) => {
 	return (
 		<div className={className}>
 			{githubLink ? (
