@@ -1,9 +1,10 @@
-import Head from "next/head";
 import { GetStaticProps } from "next";
-import { motion } from "framer-motion";
-import Layout, { siteTitle } from "../components/Layout/mainLayout/layout";
+import { motion, AnimatePresence } from "framer-motion";
+import Layout from "../components/Layout/mainLayout/layout";
 import { fetchPostsFileNames } from "../lib/projects";
 import ProjectCard from "../components/Projects/ProjectCard/ProjectCard";
+import AnimatedIntro from "../components/MainPage/AnimatedIntro/AnimatedIntro";
+import React, { useState } from "react";
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const postsFileNames = await fetchPostsFileNames();
@@ -28,32 +29,31 @@ let header = (
 	</div>
 );
 export default function Home({ projectsMetadataWithId }: { projectsMetadataWithId: ProjectPostMetaWithId[] }) {
+	const [isHeroVisible, setIsHeroVisible] = useState(true);
+	console.log(isHeroVisible);
+	const onClickHideHero = () => {
+		setIsHeroVisible(false);
+	};
 	return (
-		<Layout home header={header}>
-			<Head>
-				<title>{siteTitle}</title>
-			</Head>
-			<div className="p-2 mx-auto max-w-4xl">
-				<section className={"text-xl my-4"}>
-					<p>
-						Hi there! I'm <b>David</b>. I'm an mechanical engineer and a software developer. Currently my site is under
-						construction, so the current look is not final {":)"}
-					</p>
-				</section>
-				<section className={" my-4"}>
+		<Layout>
+			<header>
+				<AnimatePresence>{isHeroVisible && <AnimatedIntro onClickHandler={onClickHideHero} />}</AnimatePresence>
+			</header>
+			{!isHeroVisible && (
+				<section className={" my-2 p-2 mx-auto max-w-4xl"}>
 					<h1 className={"font-semibold my-2"}>Selected Projects</h1>
 					<ul className={"m-2"}>
 						{projectsMetadataWithId.map(({ id, date, title, keywords, mainImage, images }) => {
 							let imageRoute = !images ? undefined : !mainImage ? images[0] : images[mainImage];
 							return (
-								<motion.li key={id} whileHover={{ zIndex: 1, scale: 1.2, transition: { duration: 0.2 } }}>
+								<motion.li key={id} whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}>
 									<ProjectCard id={id} date={date} title={title} keywords={keywords} image={imageRoute} />
 								</motion.li>
 							);
 						})}
 					</ul>
 				</section>
-			</div>
+			)}
 		</Layout>
 	);
 }

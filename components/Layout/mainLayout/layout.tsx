@@ -1,18 +1,18 @@
 import Head from "next/head";
 import Link from "next/link";
 export const siteTitle = "Personal Portfolio Website";
+import { AnimatePresence } from "framer-motion";
 
 export default function Layout({
 	children,
-	home,
+
 	header,
 }: {
 	children: React.ReactNode;
 	header?: React.ReactNode;
-	home?: boolean;
 }) {
 	return (
-		<div>
+		<div className={"w-full"}>
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
 				<meta name="description" content="Personal Portfolio " />
@@ -25,7 +25,9 @@ export default function Layout({
 				<meta name="og:title" content={siteTitle} />
 				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
-			<header className="flex flex-col items-center">{header}</header>
+			<header>
+				<AnimatePresence onExitComplete={()=>{console.log('EXIT COMPLETE')}}>{header}</AnimatePresence>
+			</header>
 			<div>
 				<main>{children}</main>
 			</div>
