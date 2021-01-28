@@ -1,14 +1,20 @@
 import Head from "next/head";
 import NavBar from "../NavBar/NavBar";
 export const siteTitle = "Personal Portfolio Website";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import { FunctionComponent } from "react";
 
 interface Props {
 	header?: React.ReactNode;
 	navBar?: boolean;
 }
-const Layout: FunctionComponent<Props> = ({ header, children,navBar }) => {
+
+const contentVariants: Variants = {
+	hidden: { y: "50vh", opacity: 0 },
+	shown: { y: 0, opacity: 1, transition: { delay: .5, duration: 0.5 } },
+};
+
+const Layout: FunctionComponent<Props> = ({ header, children, navBar }) => {
 	return (
 		<div className={"w-full"}>
 			<Head>
@@ -25,15 +31,15 @@ const Layout: FunctionComponent<Props> = ({ header, children,navBar }) => {
 			</Head>
 			<header>
 				<AnimatePresence>
-					{navBar!==false? (<NavBar />):null}
+					{navBar !== false ? <NavBar /> : null}
 					{header}
 				</AnimatePresence>
 			</header>
-			<div className="my-2 md:my-6 lg:my-12">
+			<motion.div variants={contentVariants} initial="hidden" animate="shown" className="my-2 md:my-6 lg:my-12">
 				<main>
 					<AnimatePresence>{children}</AnimatePresence>
 				</main>
-			</div>
+			</motion.div>
 		</div>
 	);
 };
