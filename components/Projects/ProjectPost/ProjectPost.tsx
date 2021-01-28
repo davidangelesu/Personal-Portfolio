@@ -32,17 +32,6 @@ const ProjectPost: FunctionComponent<ProjectPostProps> = ({ meta, children }) =>
 				</div>
 				<div className="p-2 mx-auto max-w-4xl">{children}</div>
 			</article>
-			<div className=" max-w-4xl mx-auto my-8">
-				<Link href="/">
-					<button
-						type="button"
-						className="bg-black  text-white text-xl justify-center font-semibold px-6 py-2 rounded-lg
-							hover:border-transparent hover:shadow-lg"
-					>
-						Back
-					</button>
-				</Link>
-			</div>
 		</Layout>
 	);
 };

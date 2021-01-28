@@ -1,16 +1,14 @@
 import Head from "next/head";
-import Link from "next/link";
+import NavBar from "../NavBar/NavBar";
 export const siteTitle = "Personal Portfolio Website";
 import { AnimatePresence } from "framer-motion";
+import { FunctionComponent } from "react";
 
-export default function Layout({
-	children,
-
-	header,
-}: {
-	children: React.ReactNode;
+interface Props {
 	header?: React.ReactNode;
-}) {
+	navBar?: boolean;
+}
+const Layout: FunctionComponent<Props> = ({ header, children,navBar }) => {
 	return (
 		<div className={"w-full"}>
 			<Head>
@@ -26,11 +24,18 @@ export default function Layout({
 				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
 			<header>
-				<AnimatePresence onExitComplete={()=>{console.log('EXIT COMPLETE')}}>{header}</AnimatePresence>
+				<AnimatePresence>
+					{navBar!==false? (<NavBar />):null}
+					{header}
+				</AnimatePresence>
 			</header>
 			<div>
-				<main>{children}</main>
+				<main>
+					<AnimatePresence>{children}</AnimatePresence>
+				</main>
 			</div>
 		</div>
 	);
-}
+};
+
+export default Layout;

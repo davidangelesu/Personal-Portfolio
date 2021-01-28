@@ -11,32 +11,27 @@ interface IProps {
 	onClickHandler: (event: any) => void;
 }
 const AnimatedIntro = ({ onClickHandler }: IProps) => {
-	useEffect(() => {
-		setTimeout(() => {
-			console.log("TimeoutOver");
-			onClickHandler(null);
-		}, 5000);
-	}, []);
 	return (
 		<motion.div
 			className={"h-screen bg-black p-10 flex flex-col flex-auto  overflow-hidden"}
 			initial={{ opacity: 1 }}
-			exit={{ opacity: 0, height: 0, scale: 0, transition: { duration: 1, delay: 1 } }}
+			exit={{ opacity: 0, height: 0, scale: 0, transition: { duration: 1, delay: 0 } }}
 			onClick={onClickHandler}
 			key="1"
 		>
 			{messages.map((message, i) => (
-				<motion.h1
-					variants={HeaderVariants}
-					initial="hidden"
-					animate="shown"
-					custom={i}
-					className="my-auto  text-4xl sm:text-7xl font-bold hover:underline text-white inline-block"
-					whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}
-					key={i}
-				>
-					{message}
-				</motion.h1>
+				<div key={i} className="my-auto ">
+					<motion.h1
+						variants={HeaderVariants}
+						initial="hidden"
+						animate="shown"
+						custom={i}
+						className=" text-4xl sm:text-7xl font-bold hover:underline text-white inline-block"
+						whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}
+					>
+						{message}
+					</motion.h1>
+				</div>
 			))}
 		</motion.div>
 	);
