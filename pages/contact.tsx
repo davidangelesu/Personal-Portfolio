@@ -1,6 +1,5 @@
 import Layout from "../components/Layout/mainLayout/layout";
 import React from "react";
-import { motion } from "framer-motion";
 export default function Contact() {
 	return (
 		<Layout>

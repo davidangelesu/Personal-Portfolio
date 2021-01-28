@@ -21,7 +21,10 @@ export default function Skills({ allSkills }: { allSkills: { category: string; s
 			<section className={" p-2 mx-auto max-w-4xl md:my-12"}>
 				<h1 className={"font-semibold my-2"}>Skills</h1>
 				<p>Hi!</p>
-                <p>This are some of the Frameworks and technologies that I have worked with in some of my projects and I am able to use them to solve any problem that I might face.</p>
+				<p>
+					This are some of the Frameworks and technologies that I have worked with in some of my projects and I am able
+					to use them to solve any problem that I might face.
+				</p>
 			</section>
 			<section className={" p-2 mx-auto max-w-4xl"}>
 				<h1 className={"font-semibold my-2"}>Skills</h1>
