@@ -22,7 +22,7 @@ export default function Skills({ allSkills }: { allSkills: { category: string; s
 				<h1 className={"font-semibold my-2"}>Skills</h1>
 				<p>Hi!</p>
 				<p>
-					This are some of the Frameworks and technologies that I have worked with in some of my projects and I am able
+					This are some of the Frameworks and softwares that I have worked with in some of my projects and I am able
 					to use them to solve any problem that I might face.
 				</p>
 			</section>

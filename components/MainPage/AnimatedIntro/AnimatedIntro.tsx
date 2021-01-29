@@ -11,6 +11,9 @@ interface IProps {
 	onClickHandler: (event: any) => void;
 }
 const AnimatedIntro = ({ onClickHandler }: IProps) => {
+	useEffect(() => {
+		setTimeout(() => onClickHandler(null), 5000);
+	}, []);
 	return (
 		<motion.div
 			className={"h-screen bg-black p-10 flex flex-col flex-auto  overflow-hidden"}
