@@ -16,6 +16,12 @@
     "Front-End": [{
         "name": "React",
         "image": "/images/skills/React.png"
+    },{
+        "name": "Redux",
+        "image": "/images/skills/Redux.png"
+    },{
+        "name": "Nextjs",
+        "image": "/images/skills/Nextjs.png"
     }],
     "Back-End": [{
         "name": "Node.js",

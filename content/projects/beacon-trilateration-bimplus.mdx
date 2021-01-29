@@ -1,0 +1,61 @@
+import ProjectPost from '../../components/Projects/ProjectPost/ProjectPost.tsx';
+import YoutubeVideo from '../../components/YoutubeVideo/YoutubeVideo.tsx';
+
+export const meta={
+    title: 'Beacon Trilateration Web App with Bimplus',
+    date: '2020-01-29',
+    stared:true,
+    keywords: ['Node.JS','Express','MongoDB','Socket.io', 'REST API', 'BLE Beacons','Heroku','Unit Testing'],
+    images: ['Tracking.png','Documentation.png'].map(item=>'/images/projects/Bimplus Tracking/'+item),
+    youtubeVideoLink: 'https://youtu.be/_QsF3JiuzKY',
+    githubRepository: 'https://github.com/davidange/Tracking-App-REST-API-Server',
+    projectLink: 'https://tracking-bimplus-beacon.herokuapp.com/api-docs',
+    id: 'beacon-trilateration-bimplus'
+}
+
+
+export default ({children,meta})=><ProjectPost meta={meta}> {children} </ProjectPost>
+
+# Project Description
+For our Software Lab Project , we proposed developing a Web application that can track Users in real time by utilizing BLE Beacons and also utilize BIMPlus for setting up the project and visualizing the user location.
+For this, we decided on developing an Android App that will measure the approximate distances to the BLE Beacons and post those measurements to our Backend.
+We also developed a Frontend in React to visualize and to set up our application.
+
+
+# Project Video
+
+<YoutubeVideo className={'mhy-8'}youtubeEmbededLink='https://www.youtube.com/embed/_QsF3JiuzKY'/>
+<br/>
+
+# Application Architecture
+
+Our Application architecture is represented in the following image. We decided that t of our comunication will be done through a REST API.
+The main server, which runs on Node.js, has exposed all the REST API endpoints. This server handles and processes all the information related to setting the project and to tracking the entities.
+
+As it is shown in the image, this server has an open socket  to an additional Socket.io Server that allows the clients to listen to the updates related to the tracking of entities.
+This Socket.io Server allows clients to open a socket and recieve real time updates regarding the tracking of the entities. Everytime the location of an entity is saved, the main server emits a message to the socket server, 
+which in turn also emits it to all the subscribed clients.
+
+For storing our data, we opted on utilizing a MongoDB database as it allowed us to have more flexibility on format of the data that we were storing.
+
+The Frontend comunicates with the main server through the REST API and is also able to subscribe and listen to the updates of  the desired tracked entities in the project that the user is visualizing. 
+
+
+![App Architecture](/images/projects/Bimplus%20Tracking/App%20Architecture.png)
+
+# REST API
+
+The documentation of the API is hosted in this **[link](https://tracking-bimplus-beacon.herokuapp.com/api-docs)** and to the repository is in this **[link](https://github.com/davidange/Tracking-App-REST-API-Server)**
+
+# Frontend
+
+To speed the UI development, we used the Material UI library components. 
+We used Redux for managing the state in the React App. The Frontend shows the BIMPlus model through their viewer.
+We needed to extended the functionality of their viewer, which utilizes on Three.js, to be able to render the tracked entity inside it.
+
+The link to  the repository is  **[here](https://github.com/davidange/Tracking-App-Beacons-Frontend)**
+
+
+![App Frontend](/images/projects/Bimplus%20Tracking/App.png)
+
+
