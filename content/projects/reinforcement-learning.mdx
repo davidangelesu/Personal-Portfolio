@@ -1,0 +1,24 @@
+import ProjectPost from '../../components/Projects/ProjectPost/ProjectPost.tsx';
+
+export const meta={
+    title: 'Reinforcement Learning',
+    date: '2020-08-27',
+    keywords: ['Python','Reinforcement Learning','Value Iteration','Q Learning'],
+    images: ['Gridworld_1.gif','Gridworld_2.gif'].map(item=>'/images/projects/cs188_intro_ai/'+item),
+    id: 'reinforcement-learning',
+    mainImage: 1,
+}
+
+
+export default ({children,meta})=><ProjectPost meta={meta}> {children} </ProjectPost>
+
+
+# Background
+
+As I did not had formal experience in computer Science and was wanting on experimenting how to apply some of the knowledge that I had obtained by the online courses in Datastructures & Algorithms, 
+I decided on auditing the CS188 class Introduction to AI from UC Berkeley and program their excersices.
+
+# Project description
+
+This excersices consisted on implementing different agents. From offline planers  (As the Value iteration) that do not actually learn from the agent's actions to
+actual agents ,as a Q-Learning Agent, that interacts and learns from the model.

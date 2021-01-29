@@ -1,0 +1,42 @@
+import ProjectPost from '../../components/Projects/ProjectPost/ProjectPost.tsx';
+
+export const meta={
+    title: 'Multi-Agent Search',
+    date: '2020-09-09',
+     stared:true,
+    keywords: ['Python','Search','Expectimax','Minimax','Alpha-Beta Pruning'],
+    images: ['Minimax.gif','Expectimax.png'].map(item=>'/images/projects/cs188_intro_ai/'+item),
+    id: 'multi-agent-search'
+}
+
+
+export default ({children,meta})=><ProjectPost meta={meta}> {children} </ProjectPost>
+
+
+# Background
+
+As I did not had formal experience in computer Science and was wanting on experimenting how to apply some of the knowledge that I had obtained by the online courses in Datastructures & Algorithms, 
+I decided on auditing the CS188 class Introduction to AI from UC Berkeley and program their excersices.
+
+# Project description
+
+This excersices consisted on implementing two different Agents and some variations of them in which those agents can evaluate the game in arbitrary depth and take the most optimal desicion.
+The first algorithm implemented was a Minimax algotithm and the secont algorithm was the Expectimax.
+
+## Minimax
+
+This algorithm consist on  minimizing (or maximizing) the possible score.
+It is normally formulated for problems in which multiple players alternate their desitions and represented in a decision tree. 
+The idea is that each level in the decision tree represents a turn with the nodes symbolysing the diffent desicion that that player may take.
+The children nodes represent the decisions that the next player can take. 
+
+The idea is to optimize the decisions that the main player will make taking into consideration that the other players will always take the decision that will negatively affect the main player.
+
+![minimax](/images/projects/cs188_intro_ai.svg)
+
+Additionally, a variation of this method was also implemented. It utilizes Alpha-beta pruning so that it more efficiently explores the decision tree.
+
+# Expectimax
+
+Additionally, the expectimax decision tree was also programmed. This is similar to the Minimax decision tree but it assumes that the other players  might take another decision based on probabilities.
+
