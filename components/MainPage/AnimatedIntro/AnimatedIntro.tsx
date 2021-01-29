@@ -1,7 +1,7 @@
 import React, { useEffect, FunctionComponent } from "react";
 import { motion, Variants } from "framer-motion";
 
-const messages = ["Hi", "I am David.", "I am a Engineer and a Software Developer.", "And this is my Site."];
+const messages = ["Hi", "I am David.", "I am an Engineer and a Software Developer.", "And this is my Site."];
 const HeaderVariants: Variants = {
 	hidden: { x: "-100vh", opacity: 0 },
 	shown: (i) => ({ x: 0, opacity: 1, transition: { delay: i * 1, duration: 1, type: "spring", stiffness: 120 } }),

@@ -15,7 +15,7 @@ export default function About() {
 			<section className=" mx-auto max-w-4xl ">
 				<h1 className="font-semibold my-2 ">About Me</h1>
 				<p>
-					I am a Software Developer 👩‍💻 and an Engineer 🛠. I studied at CETYS University (in Mexicali, Baja California,
+					I am a Software Developer 👩‍💻 and an Engineer 🛠 in Munich. I studied at CETYS University (in Mexicali, Baja California,
 					Mexico) my Undergraduate degree in Mechanical Engineering and had the opportunity of working in the industry
 					before continuing with my studies.
 				</p>
