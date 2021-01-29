@@ -11,12 +11,12 @@ interface Props {
 
 const contentVariants: Variants = {
 	hidden: { y: "50vh", opacity: 0 },
-	shown: { y: 0, opacity: 1, transition: { delay: .5, duration: 0.5 } },
+	shown: { y: 0, opacity: 1, transition: { delay: 0.5, duration: 0.5 } },
 };
 
 const Layout: FunctionComponent<Props> = ({ header, children, navBar }) => {
 	return (
-		<div className={"w-full"}>
+		<div className={"w-full px-2"}>
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
 				<meta name="description" content="Personal Portfolio " />
