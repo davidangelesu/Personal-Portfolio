@@ -3,6 +3,7 @@ import ProjectPost from '../../components/Projects/ProjectPost/ProjectPost.tsx';
 export const meta={
     title: 'Graph Searchs',
     date: '2020-08-27',
+     stared:true,
     keywords: ['Python','Graphs','BFS','A*','DFS' , "UCS",'Sub optimal Search'],
     images: ['sub_optimal.gif','breadth_first_search.png','a_star_manhattan.png'].map(item=>'/images/projects/cs188_intro_ai/'+item),
     id: 'graph-searchs'
@@ -20,7 +21,7 @@ I decided on auditing the CS188 from UC Berkeley and program their excersices.
 # Project description
 
 The objective of this project was to implemnt some basic graph searches algorithms. Some of the implemented Algorithms where Breadth First search,
-Depth First Search, Uniform Cost Search and A* Search.
+Depth First Search, Uniform Cost Search and A* Search (and different heuristics for computing the A* search).
 
 Simirarly, an suboptimal search was also implemented as eventhough an A* search with a good heuristic  can take considerable amount of time to find the optimal path.
 A search Agent was implemented that finds the closest path to a dot. Utilizing this approach, the program limits how deep it transverses the graph and
