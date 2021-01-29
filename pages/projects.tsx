@@ -25,7 +25,7 @@ export default function Works({ projectsMetadataWithId }: { projectsMetadataWith
 			<section className={" p-2 mx-auto max-w-4xl"}>
 				<h1 className={"font-semibold my-2 text-2xl"}>Projects</h1>
 				<div className={"m-2"}>
-					<ResponsiveMasonry columnsCountBreakPoints={{350: 1, 600: 2}}>
+					<ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 600: 2 }}>
 						<Masonry>
 							{projectsMetadataWithId.map(({ id, date, title, keywords, mainImage, images }) => {
 								let imageRoute = !images ? undefined : !mainImage ? images[0] : images[mainImage];
@@ -37,10 +37,8 @@ export default function Works({ projectsMetadataWithId }: { projectsMetadataWith
 							})}
 						</Masonry>
 					</ResponsiveMasonry>
-					;
 				</div>
 			</section>
-			)
 		</Layout>
 	);
 }
