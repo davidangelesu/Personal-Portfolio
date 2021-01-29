@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Layout from "../components/Layout/mainLayout/layout";
 import { fetchPostsFileNames } from "../lib/projects";
 import ProjectCard from "../components/Projects/ProjectCard/ProjectCard";
-import AnimatedIntro from "../components/MainPage/AnimatedIntro/AnimatedIntro";
-import React, { useState } from "react";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import React from "react";
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const postsFileNames = await fetchPostsFileNames();
@@ -12,7 +12,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 		.map((post) => {
 			return { ...require(`../content/projects/${post}`).meta, id: post.replace(".mdx", "") } as ProjectPostMetaWithId;
 		})
-		.sort((a, b) => (a.id < b.id ? 1 : -1));
+		.sort((a, b) => (a.date < b.date ? 1 : -1));
 	return {
 		props: {
 			projectsMetadataWithId,
@@ -24,16 +24,21 @@ export default function Works({ projectsMetadataWithId }: { projectsMetadataWith
 		<Layout>
 			<section className={" p-2 mx-auto max-w-4xl"}>
 				<h1 className={"font-semibold my-2 text-2xl"}>Projects</h1>
-				<ul className={"m-2 grid grid-cols-2"}>
-					{projectsMetadataWithId.map(({ id, date, title, keywords, mainImage, images }) => {
-						let imageRoute = !images ? undefined : !mainImage ? images[0] : images[mainImage];
-						return (
-							<motion.li key={id} whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}>
-								<ProjectCard id={id} date={date} title={title} keywords={keywords} image={imageRoute} />
-							</motion.li>
-						);
-					})}
-				</ul>
+				<div className={"m-2"}>
+					<ResponsiveMasonry columnsCountBreakPoints={{350: 1, 600: 2}}>
+						<Masonry>
+							{projectsMetadataWithId.map(({ id, date, title, keywords, mainImage, images }) => {
+								let imageRoute = !images ? undefined : !mainImage ? images[0] : images[mainImage];
+								return (
+									<motion.div key={id} whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}>
+										<ProjectCard id={id} date={date} title={title} keywords={keywords} image={imageRoute} />
+									</motion.div>
+								);
+							})}
+						</Masonry>
+					</ResponsiveMasonry>
+					;
+				</div>
 			</section>
 			)
 		</Layout>

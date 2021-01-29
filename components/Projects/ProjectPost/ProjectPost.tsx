@@ -13,7 +13,6 @@ const customComponents: MDXProviderComponents = {
 	h1: (props) => <h1 className="mb-8" {...props}></h1>,
 	h2: (props) => <h1 className="mb-6" {...props}></h1>,
 	p: (props) => <p className="my-3.5" {...props}></p>,
-
 };
 
 const ProjectPost: FunctionComponent<ProjectPostProps> = ({ meta, children }) => {
@@ -39,7 +38,7 @@ const ProjectPost: FunctionComponent<ProjectPostProps> = ({ meta, children }) =>
 					/>
 					{mainImage}
 				</div>
-				<div className="p-2 mx-auto max-w-4xl">
+				<div className="p-4 mx-auto max-w-4xl">
 					<MDXProvider components={customComponents}>{children}</MDXProvider>
 					{meta.images && <PhotoGallery photos={meta.images} />}
 				</div>

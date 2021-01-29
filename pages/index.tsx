@@ -12,7 +12,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 		.map((post) => {
 			return { ...require(`../content/projects/${post}`).meta, id: post.replace(".mdx", "") } as ProjectPostMetaWithId;
 		})
-		.sort((a, b) => (a.id > b.id ? 1 : -1))
+		.sort((a, b) => (a.date < b.date ? 1 : -1))
 		.filter((post) => post.stared === true);
 	return {
 		props: {

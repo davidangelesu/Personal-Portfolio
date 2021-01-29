@@ -16,7 +16,7 @@ const contentVariants: Variants = {
 
 const Layout: FunctionComponent<Props> = ({ header, children, navBar }) => {
 	return (
-		<div className={"w-full px-2"}>
+		<div className={"w-full"}>
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
 				<meta name="description" content="Personal Portfolio " />
