@@ -1,0 +1,24 @@
+import ProjectPost from '../../components/Projects/ProjectPost/ProjectPost.tsx';
+
+export const meta={
+    title: 'Machine Learning: Neural Networks',
+    date: '2020-09-12',
+    keywords: ['Python','Machine Learning','Neural Networks'],
+    images: ['ML_nn.gif','ML_nn_curve_fitting.png'].map(item=>'/images/projects/cs188_intro_ai/'+item),
+    id: 'machine-learning-nn',
+    stared:true
+}
+
+
+export default ({children,meta})=><ProjectPost meta={meta}> {children} </ProjectPost>
+
+
+# Background
+
+As I did not had formal experience in computer Science and was wanting on experimenting how to apply some of the knowledge that I had obtained by the online courses in Datastructures & Algorithms, 
+I decided on auditing the CS188 class Introduction to AI from UC Berkeley and program their excersices.
+
+# Project description
+
+For this excercie, different Neural Networks were developed and trained to be able to predict the written number, language of a word and to fit some data points. 
+Also, some of the basic functions needed to compute, evaluate and train  the Neural network were implemented.
