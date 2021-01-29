@@ -1,0 +1,24 @@
+import ProjectPost from '../../components/Projects/ProjectPost/ProjectPost.tsx';
+
+export const meta={
+    title: 'IN2346: Intro To Deep Learning',
+    date: '2020-06-15',
+    keywords: ['Python','Pytorch','Neural Networks','Deep Learning'],
+    images: ['data_augmentation.png','tensorboard.png'].map(item=>'/images/projects/i2dl/'+item),
+    id: 'i2dl-deep-learning',
+    stared:true
+}
+
+
+export default ({children,meta})=><ProjectPost meta={meta}> {children} </ProjectPost>
+
+
+# About Class
+
+For the Class of Introduction to Deep Learning (IN2346), we had multiple excersices. We started with implementing the Neural Network in Python. 
+We implemented different types of neurons and the logic to propagate and backpropagate to be able to train the NN.
+
+After implementing our Neural Networks, we started utilizing PyTorch. A Neural  Network for predicting the CIFAR10 dataset was designed.
+Additionally, Optuna was utilized for optimizing the Hyperparameters driving the learning in our Neural Networks & Tensorboard was used to visualize the learning progress.
+
+

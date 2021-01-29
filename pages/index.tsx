@@ -34,8 +34,7 @@ export default function Home({ projectsMetadataWithId }: { projectsMetadataWithI
 					<section className={" p-2 mx-auto max-w-4xl md:my-12"}>
 						<h1 className={"font-semibold my-2"}>Welcome!</h1>
 						<p>
-							Currently my Site is under 🚧⚠🚧Construction🚧⚠🚧. The current look and its contents are not the final. Feel free on
-							looking around the site.😄
+							This is my site where I showcase some of my projects.😁
 						</p>
 					</section>
 					<section className={" p-2 mx-auto max-w-4xl"}>
