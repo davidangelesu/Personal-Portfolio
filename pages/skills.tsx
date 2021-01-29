@@ -26,12 +26,12 @@ export default function Skills({ allSkills }: { allSkills: { category: string; s
 					to use them to solve any problem that I might face.
 				</p>
 			</section>
-			<section className={" p-2 mx-auto max-w-4xl"}>
-				<h1 className={"font-semibold my-2"}>Skills</h1>
-				<ul className={"m-2"}>
+			<section className=" p-2 mx-auto max-w-4xl">
+				<h1 className="font-semibold my-2">Skills</h1>
+				<ul className="m-2">
 					{allSkills.map(({ category, skills }) => (
 						<li key={category} className="flex flex-col">
-							<h2>{category}</h2>
+							<h2 className=" my-2">{category}</h2>
 							<hr />
 							<ul className="grid grid-cols-3 lg:grid-cols-4">
 								{skills.map(({ name, image }) => (

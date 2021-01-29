@@ -10,7 +10,7 @@ interface Props {
 }
 
 const contentVariants: Variants = {
-	hidden: { y: "50vh", opacity: 0 },
+	hidden: { y:"10vh" ,opacity: 0 },
 	shown: { y: 0, opacity: 1, transition: { delay: 0.5, duration: 0.5 } },
 };
 
