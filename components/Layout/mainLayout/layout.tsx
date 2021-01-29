@@ -10,7 +10,7 @@ interface Props {
 }
 
 const contentVariants: Variants = {
-	hidden: { y:"10vh" ,opacity: 0 },
+	hidden: { y: "10vh", opacity: 0 },
 	shown: { y: 0, opacity: 1, transition: { delay: 0.5, duration: 0.5 } },
 };
 
@@ -35,11 +35,14 @@ const Layout: FunctionComponent<Props> = ({ header, children, navBar }) => {
 					{header}
 				</AnimatePresence>
 			</header>
-			<motion.div variants={contentVariants} initial="hidden" animate="shown" className="my-2 md:my-6 lg:my-12">
-				<main>
-					<AnimatePresence>{children}</AnimatePresence>
-				</main>
-			</motion.div>
+			<motion.main
+				variants={contentVariants}
+				initial="hidden"
+				animate="shown"
+				className={children ? "my-2 md:my-6 lg:my-12" : null}
+			>
+				<AnimatePresence>{children}</AnimatePresence>
+			</motion.main>
 		</div>
 	);
 };

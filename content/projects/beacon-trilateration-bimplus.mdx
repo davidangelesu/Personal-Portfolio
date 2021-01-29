@@ -29,7 +29,7 @@ We also developed a Frontend in React to visualize and to set up our application
 
 # Application Architecture
 
-Our Application architecture is represented in the following image. We decided that t of our comunication will be done through a REST API.
+Our Application architecture is represented in the following image. We decided that most of our comunication will be done through a REST API.
 The main server, which runs on Node.js, has exposed all the REST API endpoints. This server handles and processes all the information related to setting the project and to tracking the entities.
 
 As it is shown in the image, this server has an open socket  to an additional Socket.io Server that allows the clients to listen to the updates related to the tracking of entities.
@@ -51,11 +51,13 @@ The documentation of the API is hosted in this **[link](https://tracking-bimplus
 
 To speed the UI development, we used the Material UI library components. 
 We used Redux for managing the state in the React App. The Frontend shows the BIMPlus model through their viewer.
-We needed to extended the functionality of their viewer, which utilizes on Three.js, to be able to render the tracked entity inside it.
+We needed to extended the functionality of their viewer, which utilizes Three.js, to be able to render the tracked entity inside the building model.
 
 The link to  the repository is  **[here](https://github.com/davidange/Tracking-App-Beacons-Frontend)**
 
 
 ![App Frontend](/images/projects/Bimplus%20Tracking/App.png)
 
+# Android App
 
+A companion Android App was also develop to Post to the backend  the measuerements.

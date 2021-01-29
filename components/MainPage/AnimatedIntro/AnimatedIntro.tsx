@@ -12,7 +12,7 @@ interface IProps {
 }
 const AnimatedIntro = ({ onClickHandler }: IProps) => {
 	useEffect(() => {
-		setTimeout(() => onClickHandler(null), 5000);
+		//setTimeout(() => onClickHandler(null), 5000);
 	}, []);
 	return (
 		<motion.div
