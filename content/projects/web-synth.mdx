@@ -2,7 +2,7 @@ import ProjectPost from '../../components/Projects/ProjectPost/ProjectPost.tsx';
 
 export const meta={
     title: 'Web Synth',
-    date: '2020-01-10',
+    date: '2021-01-10',
     stared:true,
     keywords: ['Web Audio API','Typescript','Audio','React','TailwindCSS'],
     images: ['WebSynth.png',].map(item=>'/images/projects/web_synth/'+item),
@@ -19,9 +19,12 @@ export default ({children,meta})=><ProjectPost meta={meta}> {children} </Project
 
 This project objective was to familiarize myself with the Web Audio API and create an instrument that I can continue building on by adding additional AudioNodes.
 At the same time I have always been interested in how audio programs work and this project was a good introduction on how soundwaves are processed in all the electronical instruments.
-## Technologies Used
 
-This app was developed in React and programmed with Typescript. TailwindCSS was used as the main CSS library for this project.
+## How was it done?
+
+This app was developed in React and programmed with Typescript. TailwindCSS was used as the main CSS library for this project. 
+To produce the sounds,  the web Audio API was used. Inside the ASDR (Attack, Sustain, Decay and Release ) controls, a P5.js canvas was added so that the user can easily visualize the 
+envelope that the sound will make.
 
 ## App
 
