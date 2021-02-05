@@ -12,16 +12,16 @@ export default function About() {
 					whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}
 				/>
 			</section>
-			<section className=" mx-auto max-w-4xl ">
+			<section className=" mx-auto max-w-4xl flex flex-col ">
 				<h1 className="font-semibold my-2 ">About Me</h1>
 				<p>
-					I am a Software Developer 👩‍💻 and an Engineer 🛠 in Munich. I studied at CETYS University (in Mexicali, Baja California,
-					Mexico) my Undergraduate degree in Mechanical Engineering and had the opportunity of working in the industry
-					before continuing with my studies.
+					I am a Software Developer 👩‍💻 and an Engineer 🛠 in Munich. I studied at CETYS University (in Mexicali, Baja
+					California, Mexico) my Undergraduate degree in Mechanical Engineering and had the opportunity of working in
+					the industry before continuing with my studies.
 				</p>
 				<p>Currently I am pursuing my Master degre in Computational Mechanics at the Technical University of Munich.</p>
 				<br></br>
-				<p>I really enjoy programming and would love to pursue a career as a Software Developer 😁.</p>
+				{/* <p>I really enjoy programming and would love to pursue a career as a Software Developer😁 .</p> */}
 			</section>
 		</Layout>
 	);

@@ -25,7 +25,7 @@ const SocialBar: FunctionComponent<Props> = ({
 		<div className={className}>
 			{githubLink ? (
 				<a href={githubLink} className="mx-2">
-					<FontAwesomeIcon icon={faGithub} color={"6f42c1"} className={iconClass} />
+					<FontAwesomeIcon icon={faGithub} color="#1b1f23"className={iconClass} />
 				</a>
 			) : null}
 			{youtubeLink ? (
