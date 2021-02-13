@@ -36,6 +36,7 @@ export default function Home({ projectsMetadataWithId }: { projectsMetadataWithI
 						<p>
 							This is my site where I showcase some of my projects.😁
 							🚧 Currently my site is still under construction 🚧
+							I still need to add more of my projects 😀
 						</p>
 					</section>
 					<section className={" p-2 mx-auto max-w-4xl"}>
