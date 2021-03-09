@@ -1,6 +1,10 @@
 import "../styles/globals.css";
 import { motion } from "framer-motion";
 import { AppProps } from "next/app";
+import 'react-toastify/dist/ReactToastify.css';
+import {ToastContainer} from 'react-toastify';
+
+
 function MyApp({ Component, pageProps, router }: AppProps) {
 	return (
 		<motion.div
@@ -17,6 +21,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 			}}
 		>
 			<Component {...pageProps} />
+			<ToastContainer autoClose={3000} />
 		</motion.div>
 	);
 }
