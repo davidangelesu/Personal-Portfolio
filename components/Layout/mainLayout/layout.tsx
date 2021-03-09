@@ -36,6 +36,7 @@ const Layout: FunctionComponent<Props> = ({ header, children, navBar }) => {
 				</AnimatePresence>
 			</header>
 			<motion.main
+				key="mainMotion"
 				variants={contentVariants}
 				initial="hidden"
 				animate="shown"

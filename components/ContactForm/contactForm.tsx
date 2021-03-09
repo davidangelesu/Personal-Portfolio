@@ -36,9 +36,9 @@ const ContactForm = () => {
 			});
 	};
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} className="container mx-auto grid  grid-cols-1 md:grid-cols-2 gap-4 p-4  ">
+		<form onSubmit={handleSubmit(onSubmit)} className="container mx-auto grid  grid-cols-1 md:grid-cols-2 gap-4 p-8  md:rounded-xl my-2 md:shadow-lg md:border md:border-gray-200 md:bg-white ">
 			<div className="col-span-1">
-				<label htmlFor="name">Name:</label>
+				<label htmlFor="name" className={styles.inputLabel}>Name:</label>
 				<input
 					type="text"
 					id="name"
@@ -50,7 +50,7 @@ const ContactForm = () => {
 				></input>
 			</div>
 			<div className="col-span-1">
-				<label htmlFor="email">E-Mail:</label>
+				<label htmlFor="email" className={styles.inputLabel}>E-Mail:</label>
 				<input
 					type="email"
 					id="email"
@@ -65,7 +65,7 @@ const ContactForm = () => {
 				></input>
 			</div>
 			<div className="col-span-full">
-				<label htmlFor="message">Message:</label>
+				<label htmlFor="message" className={styles.inputLabel}>Message:</label>
 				<textarea
 					id="message"
 					name="message"
@@ -79,7 +79,7 @@ const ContactForm = () => {
 			<div className="col-span-full center mx-auto">
 				<button
 					type="submit"
-					className="bg-blue-100 disabled:opacity-30 text-blue-700 text-base font-semibold px-6 py-2 rounded-xl"
+					className="bg-blue-100 disabled:opacity-30 text-blue-700 text-base font-semibold px-6 py-2 rounded-xl shadow-sm"
 					disabled={isLoading}
 				>
 					Submit

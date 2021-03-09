@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export default function Skills({ allSkills }: { allSkills: { category: string; skills: Skill[] }[] }) {
 	return (
 		<Layout>
-			<section className={" p-2 mx-auto max-w-4xl md:my-12"}>
+			<section className={" p-2 mx-auto max-w-4xl md:my-12"} key="skills">
 				<h1 className={"font-semibold my-2"}>Skills</h1>
 				<p>Hi!</p>
 				<p>
@@ -26,7 +26,7 @@ export default function Skills({ allSkills }: { allSkills: { category: string; s
 					to use them to solve any problem that I might face.
 				</p>
 			</section>
-			<section className=" p-2 mx-auto max-w-4xl">
+			<section className=" p-2 mx-auto max-w-4xl" key="skill list">
 				<h1 className="font-semibold my-2">Skills</h1>
 				<ul className="m-2">
 					{allSkills.map(({ category, skills }) => (
