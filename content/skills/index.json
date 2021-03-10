@@ -48,10 +48,12 @@
     }],
     "CAE": [{
         "name": "ANSYS Workbench",
-        "image": "/images/skills/Ansys.jpg"
+        "image": "/images/skills/Ansys.jpg",
+        "darkImage":true
     }],
     "CAM": [{
         "name": "HSMWorks",
-        "image": "/images/skills/HSMWorks.jpg"
+        "image": "/images/skills/HSMWorks.jpg",
+        "darkImage":true
     }]
 }

@@ -1,7 +1,7 @@
 import Layout from "../components/Layout/mainLayout/layout";
 import React from "react";
 import { motion } from "framer-motion";
-import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function About() {
 	return (
@@ -23,7 +23,7 @@ export default function About() {
 						whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}
 					>
 						<a href={"https://github.com/davidange"} className="flex flex-row items-center p-2">
-							<FontAwesomeIcon icon={faGithubSquare} color="#1b1f23" width="32" height="32" className="mx-2" />
+							<FontAwesomeIcon icon={faGithub} color="#1b1f23" width="32" height="32" className="mx-2" />
 							<p className="mx-2 hidden sm:block" >GitHub</p>
 						</a>
 					</motion.button>
