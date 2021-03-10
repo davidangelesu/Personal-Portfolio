@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faExternalLinkAlt, faLink } from "@fortawesome/free-solid-svg-icons";
+import { toast } from "react-toastify";
 
 export interface Props {
 	className?: string;
@@ -50,6 +51,15 @@ const SocialBar: FunctionComponent<Props> = ({
 					<FontAwesomeIcon icon={faExternalLinkAlt} color="#000000" className={iconClass} width="32" height="32" />
 				</a>
 			) : null}
+			<button
+				className="mx-2 focus:outline-none"
+				onClick={() => {
+					navigator.clipboard.writeText(window.location.href);
+					toast("📋 Copied Address to Clipboard");
+				}}
+			>
+				<FontAwesomeIcon icon={faLink} color="#000000" className={iconClass} width="32" height="32" />
+			</button>
 		</div>
 	);
 };
