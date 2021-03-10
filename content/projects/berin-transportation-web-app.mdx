@@ -1,0 +1,25 @@
+import ProjectPost from '../../components/Projects/ProjectPost/ProjectPost.tsx';
+
+export const meta={
+    title: 'Berlin Transportation Web App',
+    date: '2021-03-04',
+    keywords: ['Angular','Typescript','Maps','Bootstrap'],
+    images: ['departures.png','berlin-transportation-main-page.png',].map(item=>'/images/projects/berlin-transportation-app/'+item),
+    projectLink: 'https://berlin-transportation-web-app.netlify.app/',
+    id: 'berlin-transportation-web-app'
+}
+
+export default ({children,meta})=><ProjectPost meta={meta}> {children} </ProjectPost>
+
+
+# Project Description
+
+For a coding challenge for a job I was tasked on developing a Web app for allowing users to see the Departures available from a desired Stop.
+The API was provided, therefore I was only focused on developing the Frontend. One of the requirements was to develop it with Angular.
+
+## Note
+The Repository is not public as I was asked to keep it private.
+
+Feel free to **[open](https://berlin-transportation-web-app.netlify.app/)** the app and test it.😬
+
+<hr/>
