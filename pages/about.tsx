@@ -18,14 +18,15 @@ export default function About() {
 			<section className=" mx-auto max-w-4xl flex flex-col p-4" key="about">
 				<div className="flex items-end justify-between my-4 ">
 					<h1 className="font-semibold ">About Me</h1>
-
-					<motion.a
-						href={"https://github.com/davidange"}
-						className="w-14 my-auto "
-						whileHover={{ zIndex: 1, scale: 1.05,  transition: { duration: 0.2 } }}
+					<motion.button
+						className="text-base font-semibold  rounded-3xl shadow-md"
+						whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}
 					>
-						<FontAwesomeIcon icon={faGithubSquare} color="#1b1f23" />
-					</motion.a>
+						<a href={"https://github.com/davidange"} className="flex flex-row items-center p-2">
+							<FontAwesomeIcon icon={faGithubSquare} color="#1b1f23" width="32" height="32" className="mx-2" />
+							<p className="mx-2 hidden sm:block" >GitHub</p>
+						</a>
+					</motion.button>
 				</div>
 				<p>
 					I am a Software Developer 👩‍💻 and an Engineer 🛠 in Munich. I studied at CETYS University (in Mexicali, Baja

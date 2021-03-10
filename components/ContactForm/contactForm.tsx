@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import styles from "./styles";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 
 interface Inputs {
 	from_name: string;
@@ -77,13 +78,14 @@ const ContactForm = () => {
 				/>
 			</div>
 			<div className="col-span-full center mx-auto">
-				<button
+				<motion.button
 					type="submit"
-					className="bg-blue-100 disabled:opacity-30 text-blue-700 text-base font-semibold px-6 py-2 rounded-xl shadow-sm"
+					className="bg-gray-100 disabled:opacity-30 text-base font-semibold px-6 py-2 rounded-3xl shadow-md"
 					disabled={isLoading}
+					whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}
 				>
 					Submit
-				</button>
+				</motion.button>
 			</div>
 		</form>
 	);
