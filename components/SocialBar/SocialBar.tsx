@@ -25,22 +25,22 @@ const SocialBar: FunctionComponent<Props> = ({
 		<div className={className}>
 			{githubLink ? (
 				<a href={githubLink} className="mx-2">
-					<FontAwesomeIcon icon={faGithub} color="#1b1f23"className={iconClass} />
+					<FontAwesomeIcon icon={faGithub} color="#1b1f23"className={iconClass} width="32" height="32"/>
 				</a>
 			) : null}
 			{youtubeLink ? (
 				<a href={youtubeLink} className="mx-2">
-					<FontAwesomeIcon icon={faYoutube} color={"#FF0000"} className={iconClass} />
+					<FontAwesomeIcon icon={faYoutube} color={"#FF0000"} className={iconClass} width="32" height="32" />
 				</a>
 			) : null}
 			{instagramLink ? (
 				<a href={instagramLink} className="mx-2">
-					<FontAwesomeIcon icon={faInstagram} className={iconClass} />
+					<FontAwesomeIcon icon={faInstagram} className={iconClass} width="32" height="32"/>
 				</a>
 			) : null}
 			{email ? (
 				<a href={email} className="mx-2">
-					<FontAwesomeIcon icon={faEnvelope} className={iconClass} />
+					<FontAwesomeIcon icon={faEnvelope} className={iconClass} width="32" height="32" />
 				</a>
 			) : null}
 		</div>
