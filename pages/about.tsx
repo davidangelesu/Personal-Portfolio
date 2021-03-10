@@ -15,12 +15,17 @@ export default function About() {
 					whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}
 				/>
 			</section>
-			<section className=" mx-auto max-w-4xl flex flex-col p-4"  key="about">
+			<section className=" mx-auto max-w-4xl flex flex-col p-4" key="about">
 				<div className="flex items-end justify-between my-4 ">
 					<h1 className="font-semibold ">About Me</h1>
-					<a href={"https://github.com/davidange"} className="w-14 my-auto ">
+
+					<motion.a
+						href={"https://github.com/davidange"}
+						className="w-14 my-auto "
+						whileHover={{ zIndex: 1, scale: 1.05,  transition: { duration: 0.2 } }}
+					>
 						<FontAwesomeIcon icon={faGithubSquare} color="#1b1f23" />
-					</a>
+					</motion.a>
 				</div>
 				<p>
 					I am a Software Developer 👩‍💻 and an Engineer 🛠 in Munich. I studied at CETYS University (in Mexicali, Baja
