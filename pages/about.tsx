@@ -1,7 +1,7 @@
 import Layout from "../components/Layout/mainLayout/layout";
 import React from "react";
 import { motion } from "framer-motion";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub ,faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function About() {
 	return (
@@ -18,15 +18,27 @@ export default function About() {
 			<section className=" mx-auto max-w-4xl flex flex-col p-4" key="about">
 				<div className="flex items-end justify-between my-4 ">
 					<h1 className="font-semibold ">About Me</h1>
-					<motion.button
-						className="text-base font-semibold  rounded-3xl shadow-md"
-						whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}
-					>
-						<a href={"https://github.com/davidange"} className="flex flex-row items-center p-2">
-							<FontAwesomeIcon icon={faGithub} color="#1b1f23" width="32" height="32" className="mx-2" />
-							<p className="mx-2 hidden sm:block" >GitHub</p>
-						</a>
-					</motion.button>
+					<div>
+						<motion.button
+							className="text-base font-semibold  rounded-3xl shadow-md mx-2"
+							whileHover={{ zIndex: 1, scale: 1.05, color:"#6f42c1", transition: { duration: 0.2 } }}
+						>
+							<a href={"https://github.com/davidange"} className="flex flex-row items-center p-2">
+								<FontAwesomeIcon icon={faGithub} color="#1b1f23" width="32" height="32" className="mx-2" />
+								<p className="mx-2 hidden sm:block">GitHub</p>
+							</a>
+						</motion.button>
+						{/* TODO Update Linkedin First */}
+						{/* <motion.button
+							className="text-base font-semibold  rounded-3xl shadow-md mx-2"
+							whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}
+						>
+							<a href={"https://www.linkedin.com/in/david-angeles-ungson-55b495141/"} className="flex flex-row items-center p-2">
+								<FontAwesomeIcon icon={faLinkedin} color="#1b1f23" width="32" height="32" className="mx-2" />
+								<p className="mx-2 hidden sm:block">LinkedIn</p>
+							</a>
+						</motion.button> */}
+					</div>
 				</div>
 				<p>
 					I am a Software Developer 👩‍💻 and an Engineer 🛠 in Munich. I studied at CETYS University (in Mexicali, Baja
