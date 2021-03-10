@@ -15,7 +15,7 @@ const ProjectCard: FunctionComponent<Props> = ({ id, title, date, keywords, imag
 		<Link href={`/projects/${id}`}>
 			<a
 				className={
-					" hover:border-transparent hover:shadow-lg group block rounded-xl m-2 border border-gray-200 bg-white"
+					" hover:border-transparent shadow-md hover:shadow-lg group block rounded-xl m-2 border border-gray-200 bg-white"
 				}
 			>
 				<div className="flex flex-col">
