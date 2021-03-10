@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 export interface Props {
 	className?: string;
@@ -10,6 +10,7 @@ export interface Props {
 	instagramLink?: string;
 	youtubeLink?: string;
 	bigIcons?: boolean;
+	externalLink?: string;
 }
 const SocialBar: FunctionComponent<Props> = ({
 	className,
@@ -17,6 +18,7 @@ const SocialBar: FunctionComponent<Props> = ({
 	githubLink,
 	instagramLink,
 	youtubeLink,
+	externalLink,
 	bigIcons,
 }) => {
 	const iconClass = bigIcons ? "fa-6x" : "fa-3x";
@@ -25,7 +27,7 @@ const SocialBar: FunctionComponent<Props> = ({
 		<div className={className}>
 			{githubLink ? (
 				<a href={githubLink} className="mx-2">
-					<FontAwesomeIcon icon={faGithub} color="#1b1f23"className={iconClass} width="32" height="32"/>
+					<FontAwesomeIcon icon={faGithub} color="#1b1f23" className={iconClass} width="32" height="32" />
 				</a>
 			) : null}
 			{youtubeLink ? (
@@ -35,12 +37,17 @@ const SocialBar: FunctionComponent<Props> = ({
 			) : null}
 			{instagramLink ? (
 				<a href={instagramLink} className="mx-2">
-					<FontAwesomeIcon icon={faInstagram} className={iconClass} width="32" height="32"/>
+					<FontAwesomeIcon icon={faInstagram} className={iconClass} width="32" height="32" />
 				</a>
 			) : null}
 			{email ? (
 				<a href={email} className="mx-2">
 					<FontAwesomeIcon icon={faEnvelope} className={iconClass} width="32" height="32" />
+				</a>
+			) : null}
+			{externalLink ? (
+				<a href={externalLink} className="mx-2">
+					<FontAwesomeIcon icon={faExternalLinkAlt} color="#000000" className={iconClass} width="32" height="32" />
 				</a>
 			) : null}
 		</div>

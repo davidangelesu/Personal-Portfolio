@@ -8,8 +8,16 @@ interface Props {
 	githubLink?: string;
 	instagramLink?: string;
 	youtubeLink?: string;
+	externalLink?: string;
 }
-const ProjectTitle: FunctionComponent<Props> = ({ title, date, githubLink, instagramLink, youtubeLink }) => {
+const ProjectTitle: FunctionComponent<Props> = ({
+	title,
+	date,
+	githubLink,
+	instagramLink,
+	youtubeLink,
+	externalLink,
+}) => {
 	return (
 		<div className="max-w-4xl mx-auto p-4">
 			<h1 className="text-6xl">{title}</h1>
@@ -17,7 +25,13 @@ const ProjectTitle: FunctionComponent<Props> = ({ title, date, githubLink, insta
 				<div className="text-gray-500 h-auto">
 					<Date dateString={date} />
 				</div>
-				<SocialBar className="flex" githubLink={githubLink} youtubeLink={youtubeLink} instagramLink={instagramLink} />
+				<SocialBar
+					className="flex"
+					githubLink={githubLink}
+					youtubeLink={youtubeLink}
+					instagramLink={instagramLink}
+					externalLink={externalLink}
+				/>
 			</div>
 		</div>
 	);

@@ -35,6 +35,7 @@ const ProjectPost: FunctionComponent<ProjectPostProps> = ({ meta, children }) =>
 						date={meta.date}
 						youtubeLink={meta.youtubeVideoLink}
 						githubLink={meta.githubRepository}
+						externalLink={meta.projectLink}
 					/>
 					{mainImage}
 				</div>
