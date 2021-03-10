@@ -1,0 +1,33 @@
+import ProjectPost from '../../components/Projects/ProjectPost/ProjectPost.tsx';
+
+export const meta={
+    title: 'Interactive As Rigid As Possible',
+    date: '2021-02-22',
+    keywords: ['ARAP','3D','Mesh','C++','Eigen' ,'3D Motion'],
+    images: ['app_1.gif', 'app_2.gif', 'app_comparison.png','weight_comparison.png'].map(item=>'/images/projects/interactive-arap/'+item),
+    mainImage: 0,
+    id:'interactive-arap',
+    githubRepository: 'https://github.com/davidange/Interactive-ARAP',
+    stared:true
+}
+
+export default ({children,meta})=><ProjectPost meta={meta}> {children} </ProjectPost>
+
+# Project Description
+
+We implemented an Interactive ARAP for the lecture of 3D Scanning & Motion Capture (IN2354).
+
+Interactive mesh deformation has wide use cases in the Fields of animation and computer
+graphics. For example, it can be used for unwrapping a mesh or morphing one shape
+into another, which is highly used in animation and computer games. The most important criterion for mesh deformation is to preserve 
+the topology and scale, therefore imposing an "as rigid as possible" constraint. 
+
+To achieve this, we define an energy term that represents the strain energy of each cell, defined as a 1-level fan of  the mesh.
+
+# Results
+
+The deformations obtained by our implementation are similar to those used as baseline.
+
+![comparison](/images/projects/interactive-arap/app_comparison.png)
+
+Further information of how it was implemented & the mathematical insights can be found in the linked github Repository
