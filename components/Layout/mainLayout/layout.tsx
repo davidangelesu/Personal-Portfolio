@@ -5,6 +5,7 @@ import { AnimatePresence, motion, Variants } from "framer-motion";
 import { FunctionComponent } from "react";
 
 interface Props {
+	pageTitle:string;
 	header?: React.ReactNode;
 	navBar?: boolean;
 }
@@ -14,7 +15,7 @@ const contentVariants: Variants = {
 	shown: { y: 0, opacity: 1, transition: { delay: 0.5, duration: 0.5 } },
 };
 
-const Layout: FunctionComponent<Props> = ({ header, children, navBar }) => {
+const Layout: FunctionComponent<Props> = ({ header, children, navBar,pageTitle }) => {
 	return (
 		<div className={"w-full"}>
 			<Head>
@@ -28,6 +29,7 @@ const Layout: FunctionComponent<Props> = ({ header, children, navBar }) => {
 				/>
 				<meta name="og:title" content={siteTitle} />
 				<meta name="twitter:card" content="summary_large_image" />
+				<title>{pageTitle}</title>
 			</Head>
 			<header>
 				<AnimatePresence>

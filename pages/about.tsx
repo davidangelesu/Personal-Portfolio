@@ -5,7 +5,7 @@ import { faGithub ,faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function About() {
 	return (
-		<Layout>
+		<Layout pageTitle="About Me">
 			<section className="p-8 items-center" key="userImage">
 				<motion.img
 					key="imageUser"

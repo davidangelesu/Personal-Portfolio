@@ -28,7 +28,7 @@ export default function Home({ projectsMetadataWithId }: { projectsMetadataWithI
 	};
 	let header = isHeroVisible && <AnimatedIntro onClickHandler={onClickHideHero} key="1" />;
 	return (
-		<Layout navBar={!isHeroVisible} header={header}>
+		<Layout pageTitle="My Portfolio" navBar={!isHeroVisible} header={header}>
 			{!isHeroVisible && (
 				<>
 					<section className={" p-2 mx-auto max-w-4xl md:my-12"}>

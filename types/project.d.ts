@@ -8,6 +8,7 @@ declare interface ProjectPostMeta {
 	youtubeVideoLink?: string;
 	githubRepository?: string;
 	projectLink?: string;
+	pdfUrl?:string;
 }
 
 declare interface ProjectPostMetaWithId extends ProjectPostMeta{
