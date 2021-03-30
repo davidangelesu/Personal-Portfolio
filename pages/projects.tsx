@@ -25,20 +25,29 @@ export default function Works({ projectsMetadataWithId }: { projectsMetadataWith
 	const [filteredProjectsMetadataWithId, setFilteredProjectsMetadataWithId] = useState<ProjectPostMetaWithId[]>([
 		...projectsMetadataWithId,
 	]);
-	
-	//Filter Search
+
+	//Filter List of projects
 	useEffect(() => {
 		if (search.length > 0) {
 			//apply simple search & Filter
 			let lowerCaseSearch = search.toLowerCase();
+			//create array of each searchWord
+			let searchWords = lowerCaseSearch.split(/\s+/);
+
 			setFilteredProjectsMetadataWithId(
 				projectsMetadataWithId.filter((post) => {
-					//Search in Name
-					let isInName = post.title.toLowerCase().includes(lowerCaseSearch);
-					//Search in Keywords
-					let isInKeywords =
-						post.keywords.findIndex((keyword) => keyword.toLowerCase().includes(lowerCaseSearch)) != -1;
-					return isInName || isInKeywords;
+					for (const searchWord of searchWords) {
+						//SearchWord in Name
+						let isInName = post.title.toLowerCase().includes(searchWord);
+						//SearchWord in Keywords
+						let isInKeywords = post.keywords.findIndex((keyword) => keyword.toLowerCase().includes(searchWord)) != -1;
+
+						//if Searchword is not in name or keywords, return false. (to prevent unnecesary evaluations)
+						if (!(isInName || isInKeywords)) {
+							return false;
+						}
+					}
+					return true;
 				})
 			);
 		} else {
