@@ -2,8 +2,9 @@ import Head from "next/head";
 import Layout from "../../Layout/mainLayout/layout";
 import ProjectTitle from "../ProjectTitle/ProjectTitle";
 import PhotoGallery from "../../PhotoGallery/PhotoGallery";
-import { FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import { MDXProvider, MDXProviderComponents } from "@mdx-js/react";
+import PDFViewer from "../../PDFViewer/PDFViewer";
 
 interface ProjectPostProps {
 	meta: ProjectPostMeta;
@@ -24,11 +25,9 @@ const ProjectPost: FunctionComponent<ProjectPostProps> = ({ meta, children }) =>
 	}
 
 	return (
-		<Layout>
-			<Head>
-				<title>{meta.title}</title>
-			</Head>
-			<article>
+		<Layout pageTitle={meta.title}>
+			<article >
+				{/* Title */}
 				<div className="mb-8">
 					<ProjectTitle
 						title={meta.title}
@@ -39,8 +38,14 @@ const ProjectPost: FunctionComponent<ProjectPostProps> = ({ meta, children }) =>
 					/>
 					{mainImage}
 				</div>
+				{/* Content */}
 				<div className="p-4 mx-auto max-w-4xl">
 					<MDXProvider components={customComponents}>{children}</MDXProvider>
+					{meta.pdfUrl && (
+						<div className="w-full h-96 lg:h-screen my-4 lg:py-2">
+							<PDFViewer pdfUrl={meta.pdfUrl} />
+						</div>
+					)}
 					{meta.images && <PhotoGallery photos={meta.images} />}
 				</div>
 			</article>

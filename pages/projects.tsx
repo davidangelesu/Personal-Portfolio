@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 export default function Works({ projectsMetadataWithId }: { projectsMetadataWithId: ProjectPostMetaWithId[] }) {
 	return (
-		<Layout>
+		<Layout pageTitle="Projects">
 			<section className={" p-2 mx-auto max-w-4xl"}>
 				<h1 className={"font-semibold my-2 text-2xl"}>Projects</h1>
 				<div className={"m-2"}>

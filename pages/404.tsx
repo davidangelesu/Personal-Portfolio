@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Custom404() {
 	return (
-		<Layout>
+		<Layout pageTitle="Not Found">
 			<section className=" mx-auto max-w-4xl  ">
                 <h1 className="text-center">Error 404: Page Not Found...</h1>
 				{/* <h1 className="font-semibold my-2 ">Contact Me:</h1>
