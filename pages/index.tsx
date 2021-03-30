@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 export default function Home({ projectsMetadataWithId }: { projectsMetadataWithId: ProjectPostMetaWithId[] }) {
 	const [isHeroVisible, setIsHeroVisible] = useState(true);
-	console.log(isHeroVisible);
+
 	const onClickHideHero = () => {
 		setIsHeroVisible(false);
 	};
