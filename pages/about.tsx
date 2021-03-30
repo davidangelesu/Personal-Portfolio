@@ -23,7 +23,7 @@ export default function About() {
 							className="text-base font-semibold  rounded-3xl shadow-md mx-2"
 							whileHover={{ zIndex: 1, scale: 1.05, color:"#6f42c1", transition: { duration: 0.2 } }}
 						>
-							<a href={"https://github.com/davidange"} className="flex flex-row items-center p-2">
+							<a href={"https://github.com/davidange"} className="flex flex-row items-center p-2" target="_blank">
 								<FontAwesomeIcon icon={faGithub} color="#1b1f23" width="32" height="32" className="mx-2" />
 								<p className="mx-2 hidden sm:block">GitHub</p>
 							</a>
@@ -33,7 +33,7 @@ export default function About() {
 							className="text-base font-semibold  rounded-3xl shadow-md mx-2"
 							whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}
 						>
-							<a href={"https://www.linkedin.com/in/david-angeles-ungson-55b495141/"} className="flex flex-row items-center p-2">
+							<a href={"https://www.linkedin.com/in/david-angeles-ungson-55b495141/"} className="flex flex-row items-center p-2" target="_blank">
 								<FontAwesomeIcon icon={faLinkedin} color="#1b1f23" width="32" height="32" className="mx-2" />
 								<p className="mx-2 hidden sm:block">LinkedIn</p>
 							</a>
