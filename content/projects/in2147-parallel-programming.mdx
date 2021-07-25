@@ -1,0 +1,23 @@
+import ProjectPost from '../../components/Projects/ProjectPost/ProjectPost.tsx';
+
+export const meta={
+    title: 'IN2147: Parallel Programming',
+    date: '2021-07-16',
+    keywords: ['C++','OpenMP','MPI','Parallel Programming', "PThreads"],
+    images: ['MPI-parallelization.png','results.png',"sequential-optimization.png"].map(item=>'/images/projects/in2147/'+item),
+    id: 'in2147-parallel-programming',
+}
+
+
+export default ({children,meta})=><ProjectPost meta={meta}> {children} </ProjectPost>
+
+
+# About Class
+
+For the Class of Parallel Programming (IN2147), we had multiple exercises. We solved multiple excersices with different parallelization approaches and APIs.
+
+# Final Project
+
+For the Final Project we parallelized a gaussian elimination and backward substitution algorithm for solving a linear system of equations. 
+We implemented different parallelization approaches, pure OpenMP, MPI and Hybrid approach. As the program was run in a NUMA server, the best performance was obtained with a pure OpenMP paralelization.
+

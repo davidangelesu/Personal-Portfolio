@@ -45,9 +45,8 @@ export default function About() {
 					California, Mexico) my Undergraduate degree in Mechanical Engineering and had the opportunity of working in
 					the industry before continuing with my studies.
 				</p>
-				<p>Currently I am pursuing my Master degre in Computational Mechanics at the Technical University of Munich.</p>
+				<p>Currently I am pursuing my Master degre in Computational Mechanics at the Technical University of Munich and working as a Werkstudent as a Sofware Engineer.</p>
 				<br></br>
-				{/* <p>I really enjoy programming and would love to pursue a career as a Software Developer😁 .</p> */}
 			</section>
 		</Layout>
 	);
