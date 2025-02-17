@@ -2,10 +2,10 @@ import Head from "next/head";
 import NavBar from "../NavBar/NavBar";
 export const siteTitle = "Personal Portfolio Website";
 import { AnimatePresence, motion, Variants } from "framer-motion";
-import { FunctionComponent } from "react";
+import { FunctionComponent, PropsWithChildren } from "react";
 
 interface Props {
-	pageTitle:string;
+	pageTitle: string;
 	header?: React.ReactNode;
 	navBar?: boolean;
 }
@@ -15,7 +15,7 @@ const contentVariants: Variants = {
 	shown: { y: 0, opacity: 1, transition: { delay: 0.5, duration: 0.5 } },
 };
 
-const Layout: FunctionComponent<Props> = ({ header, children, navBar,pageTitle }) => {
+const Layout: FunctionComponent<PropsWithChildren<Props>> = ({ header, children, navBar, pageTitle }) => {
 	return (
 		<div className={"w-full"}>
 			<Head>

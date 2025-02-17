@@ -2,21 +2,22 @@ import Head from "next/head";
 import Layout from "../../Layout/mainLayout/layout";
 import ProjectTitle from "../ProjectTitle/ProjectTitle";
 import PhotoGallery from "../../PhotoGallery/PhotoGallery";
-import React, { FunctionComponent } from "react";
-import { MDXProvider, MDXProviderComponents } from "@mdx-js/react";
+import React, { FunctionComponent, JSX, PropsWithChildren } from "react";
+import { MDXProvider } from "@mdx-js/react";
 import PDFViewer from "../../PDFViewer/PDFViewer";
+import { MDXComponents } from "mdx/types";
 
 interface ProjectPostProps {
 	meta: ProjectPostMeta;
 }
 
-const customComponents: MDXProviderComponents = {
+const customComponents: MDXComponents = {
 	h1: (props) => <h1 className="mb-8" {...props}></h1>,
 	h2: (props) => <h1 className="mb-6" {...props}></h1>,
 	p: (props) => <p className="my-3.5" {...props}></p>,
 };
 
-const ProjectPost: FunctionComponent<ProjectPostProps> = ({ meta, children }) => {
+const ProjectPost: FunctionComponent<PropsWithChildren<ProjectPostProps>> = ({ meta, children }) => {
 	//define Main Image;
 	let mainImage: JSX.Element | undefined = undefined;
 	if (meta.images) {

@@ -12,7 +12,7 @@ interface Inputs {
 }
 
 const ContactForm = () => {
-	const { register, handleSubmit, errors, reset: resetForm } = useForm<Inputs>();
+	const { register, handleSubmit, formState: { errors }, reset: resetForm } = useForm<Inputs>();
 	const [isLoading, setIsLoading] = useState(false);
 
 	//On submit, Send contact message
@@ -46,8 +46,8 @@ const ContactForm = () => {
 					name="from_name"
 					placeholder="Name"
 					defaultValue=""
-					ref={register({ required: true })}
 					className={`${styles.inputForm} ${errors.from_name ? styles.errorInputForm : ""}`}
+					{...register('from_name', { required: true })}
 				></input>
 			</div>
 			<div className="col-span-1">
@@ -58,7 +58,7 @@ const ContactForm = () => {
 					name="reply_to"
 					placeholder="E-mail"
 					defaultValue=""
-					ref={register({
+					{...register('reply_to', {
 						required: true,
 						pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{1,}$/i, message: "invalid Email Format" },
 					})}
@@ -73,7 +73,7 @@ const ContactForm = () => {
 					placeholder="Message..."
 					defaultValue=""
 					rows={8}
-					ref={register({ required: true })}
+					{...register('message', { required: true })}
 					className={`${styles.inputForm} ${errors.message ? styles.errorInputForm : ""}`}
 				/>
 			</div>
