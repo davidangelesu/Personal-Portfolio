@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Layout from "../components/Layout/mainLayout/layout";
 import { fetchPostsFileNames } from "../lib/projects";
 import ProjectCard from "../components/Projects/ProjectCard/ProjectCard";
-import React from "react";
+import AnimatedIntro from "../components/MainPage/AnimatedIntro/AnimatedIntro";
+import React, { useState } from "react";
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const postsFileNames = await fetchPostsFileNames();
@@ -20,15 +21,20 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	};
 };
 export default function Home({ projectsMetadataWithId }: { projectsMetadataWithId: ProjectPostMetaWithId[] }) {
+	const [isHeroVisible, setIsHeroVisible] = useState(true);
 
+	const onClickHideHero = () => {
+		setIsHeroVisible(false);
+	};
+	let header = isHeroVisible && <AnimatedIntro onClickHandler={onClickHideHero} key="1" />;
 	return (
-		<Layout pageTitle="My Portfolio" navBar={true} >
-			{(
+		<Layout pageTitle="My Portfolio" navBar={!isHeroVisible} header={header}>
+			{!isHeroVisible && (
 				<>
 					<section className={" p-2 mx-auto max-w-4xl md:my-12"}>
-						<h1 className={"font-semibold my-2"}>Hi there, I am <span>David</span></h1>
+						<h1 className={"font-semibold my-2"}>Welcome!</h1>
 						<p className="text-center">
-							This is my site where I showcase some of my projects.<br />
+							This is my site where I showcase some of my projects.<br/>
 							Feel free to roam around!
 						</p>
 					</section>
