@@ -12,9 +12,6 @@
     }, {
         "name": "Python",
         "image": "/images/skills/Python.png"
-    }, {
-        "name": "Matlab",
-        "image": "/images/skills/Matlab.png"
     }],
     "Front-End": [{
         "name": "React",
