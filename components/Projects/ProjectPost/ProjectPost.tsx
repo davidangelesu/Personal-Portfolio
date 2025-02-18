@@ -17,7 +17,9 @@ const customComponents: MDXComponents = {
 	p: (props) => <p className="my-3.5" {...props}></p>,
 };
 
-const ProjectPost: FunctionComponent<PropsWithChildren<ProjectPostProps>> = ({ meta, children }) => {
+const ProjectPost: FunctionComponent<PropsWithChildren<ProjectPostProps>> = ({ children, ...props }) => {
+	console.log("!!!props")
+	console.log(props)
 	//define Main Image;
 	let mainImage: JSX.Element | undefined = undefined;
 	if (meta.images) {

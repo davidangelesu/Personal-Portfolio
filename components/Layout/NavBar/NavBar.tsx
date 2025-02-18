@@ -18,37 +18,37 @@ const NavBar = () => {
 			<ul className="flex flex-row justify-between mx-4 sm:mx-16 md:mx-32 align-middle h-full ">
 				<li className="flex flex-col">
 					<Link href="/">
-						<motion.a key="home" id="home" className="menu-item m-auto  cursor-pointer" variants={AnchorVariants} whileHover="hovering" >
+						<motion.div key="home" id="home" className="menu-item m-auto  cursor-pointer" variants={AnchorVariants} whileHover="hovering" >
 							Home
-						</motion.a>
+						</motion.div>
 					</Link>
 				</li>
 				<li className="flex flex-col">
 					<Link href="/projects">
-						<motion.a key="projects" id="projects" className="menu-item m-auto cursor-pointer" variants={AnchorVariants} whileHover="hovering">
+						<motion.div key="projects" id="projects" className="menu-item m-auto cursor-pointer" variants={AnchorVariants} whileHover="hovering">
 							Projects
-						</motion.a>
+						</motion.div>
 					</Link>
 				</li>
 				<li className="flex flex-col">
 					<Link href="/about">
-						<motion.a key="about" id="about" className="menu-item m-auto cursor-pointer" variants={AnchorVariants} whileHover="hovering">
+						<motion.div key="about" id="about" className="menu-item m-auto cursor-pointer" variants={AnchorVariants} whileHover="hovering">
 							About
-						</motion.a>
+						</motion.div>
 					</Link>
 				</li>
 				<li className="flex flex-col">
 					<Link href="/skills">
-						<motion.a key="skills" id="skills" className="menu-item m-auto cursor-pointer" variants={AnchorVariants} whileHover="hovering">
+						<motion.div key="skills" id="skills" className="menu-item m-auto cursor-pointer" variants={AnchorVariants} whileHover="hovering">
 							Skills
-						</motion.a>
+						</motion.div>
 					</Link>
 				</li>
 				<li className="flex flex-col">
 					<Link href="/contact">
-						<motion.a key="contact" id="contact" className="menu-item m-auto cursor-pointer" variants={AnchorVariants} whileHover="hovering">
+						<motion.div key="contact" id="contact" className="menu-item m-auto cursor-pointer" variants={AnchorVariants} whileHover="hovering">
 							Contact
-						</motion.a>
+						</motion.div>
 					</Link>
 				</li>
 			</ul>

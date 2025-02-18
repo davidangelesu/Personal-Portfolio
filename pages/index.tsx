@@ -5,12 +5,14 @@ import { fetchPostsFileNames } from "../lib/projects";
 import ProjectCard from "../components/Projects/ProjectCard/ProjectCard";
 import AnimatedIntro from "../components/MainPage/AnimatedIntro/AnimatedIntro";
 import React, { useState } from "react";
+import { getMeta } from "../lib/getMeta";
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const postsFileNames = await fetchPostsFileNames();
 	const projectsMetadataWithId = postsFileNames
 		.map((post) => {
-			return { ...require(`../content/projects/${post}`).meta, id: post.replace(".mdx", "") } as ProjectPostMetaWithId;
+			const id = post.replace(".mdx", "")
+			return { ...getMeta(id), id } as ProjectPostMetaWithId;
 		})
 		.sort((a, b) => (a.date < b.date ? 1 : -1))
 		.filter((post) => post.stared === true);
@@ -34,7 +36,7 @@ export default function Home({ projectsMetadataWithId }: { projectsMetadataWithI
 					<section className={" p-2 mx-auto max-w-4xl md:my-12"}>
 						<h1 className={"font-semibold my-2"}>Welcome!</h1>
 						<p className="text-center">
-							This is my site where I showcase some of my projects.<br/>
+							This is my site where I showcase some of my projects.<br />
 							Feel free to roam around!
 						</p>
 					</section>

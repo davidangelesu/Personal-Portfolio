@@ -13,7 +13,7 @@ interface Props {
 const ProjectCard: FunctionComponent<Props> = ({ id, title, date, keywords, image }) => {
 	return (
 		<Link href={`/projects/${id}`}>
-			<a
+			<div
 				className={
 					" hover:border-transparent shadow-md hover:shadow-lg group block rounded-xl m-2 border border-gray-200 bg-white"
 				}
@@ -37,7 +37,7 @@ const ProjectCard: FunctionComponent<Props> = ({ id, title, date, keywords, imag
 						) : null}
 					</div>
 				</div>
-			</a>
+			</div>
 		</Link>
 	);
 };
