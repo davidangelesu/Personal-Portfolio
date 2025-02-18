@@ -6,12 +6,14 @@ import ProjectCard from "../components/Projects/ProjectCard/ProjectCard";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import React, { useEffect, useState } from "react";
 import { SearchBar } from "../components/SearchBar/SearchBar";
+import { getMeta } from "../lib/getMeta";
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const postsFileNames = await fetchPostsFileNames();
 	const projectsMetadataWithId = postsFileNames
 		.map((post) => {
-			return { ...require(`../content/projects/${post}`).meta, id: post.replace(".mdx", "") } as ProjectPostMetaWithId;
+			const id = post.replace(".mdx", "")
+			return { ...getMeta(id), id } as ProjectPostMetaWithId;
 		})
 		.sort((a, b) => (a.date < b.date ? 1 : -1));
 	return {
