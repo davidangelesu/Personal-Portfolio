@@ -12,13 +12,18 @@
     }, {
         "name": "Python",
         "image": "/images/skills/Python.png"
-    }, {
-        "name": "Matlab",
-        "image": "/images/skills/Matlab.png"
     }],
     "Front-End": [{
         "name": "React",
         "image": "/images/skills/React.png"
+    },
+    {
+        "name": "RxJS",
+        "image": "/images/skills/RxJS.svg"
+    },
+    {
+        "name": "InversifyJS",
+        "image": "/images/skills/inversifyJS.png"
     }, {
         "name": "Redux",
         "image": "/images/skills/Redux.png"
@@ -38,22 +43,5 @@
     }, {
         "name": "MySQL",
         "image": "/images/skills/Mysql_logo.png"
-    }],
-    "CAD": [{
-        "name": "Solidworks",
-        "image": "/images/skills/Solidworks.png"
-    }, {
-        "name": "CATIA V5",
-        "image": "/images/skills/CatiaV5.png"
-    }],
-    "CAE": [{
-        "name": "ANSYS Workbench",
-        "image": "/images/skills/Ansys.jpg",
-        "darkImage":true
-    }],
-    "CAM": [{
-        "name": "HSMWorks",
-        "image": "/images/skills/HSMWorks.jpg",
-        "darkImage":true
     }]
 }

@@ -14,7 +14,7 @@ const NavVariants: Variants = {
 
 const NavBar = () => {
 	return (
-		<motion.nav variants={NavVariants} initial="hidden" animate="shown" className=" h-8 sm:h-12   flex flex-col text-base sm:text-2xl ">
+		<motion.nav variants={NavVariants} initial="hidden" animate="shown" className=" h-8 sm:h-12 p-4   flex flex-col text-base sm:text-2xl ">
 			<ul className="flex flex-row justify-between mx-4 sm:mx-16 md:mx-32 align-middle h-full ">
 				<li className="flex flex-col">
 					<Link href="/">

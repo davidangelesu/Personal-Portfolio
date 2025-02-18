@@ -6,8 +6,6 @@ import { FunctionComponent, PropsWithChildren } from "react";
 
 interface Props {
 	pageTitle: string;
-	header?: React.ReactNode;
-	navBar?: boolean;
 }
 
 const contentVariants: Variants = {
@@ -15,7 +13,7 @@ const contentVariants: Variants = {
 	shown: { y: 0, opacity: 1, transition: { delay: 0.5, duration: 0.5 } },
 };
 
-const Layout: FunctionComponent<PropsWithChildren<Props>> = ({ header, children, navBar, pageTitle }) => {
+const Layout: FunctionComponent<PropsWithChildren<Props>> = ({ children, pageTitle }) => {
 	return (
 		<div className={"w-full"}>
 			<Head>
@@ -32,11 +30,9 @@ const Layout: FunctionComponent<PropsWithChildren<Props>> = ({ header, children,
 				<title>{pageTitle}</title>
 			</Head>
 			<header>
-				<AnimatePresence>
-					{navBar !== false ? <NavBar /> : null}
-					{header}
-				</AnimatePresence>
+				<NavBar />
 			</header>
+
 			<motion.main
 				key="mainMotion"
 				variants={contentVariants}

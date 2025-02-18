@@ -20,8 +20,8 @@ export default function Skills({ allSkills }: { allSkills: { category: string; s
 				<h1 className={"font-semibold my-2"}>Skills</h1>
 				<p>Hi!</p>
 				<p>
-					This are some of the Frameworks and softwares that I have worked with in some of my projects and I am able
-					to use them to solve any problem that I might face.
+					This are some of the programming languages, frameworks and libraries that I feel comfortable working with.
+
 				</p>
 			</section>
 			<section className=" p-2 mx-auto max-w-4xl" key="skill list">
@@ -32,7 +32,7 @@ export default function Skills({ allSkills }: { allSkills: { category: string; s
 							<h2 className=" my-2">{category}</h2>
 							<hr />
 							<ul className="grid grid-cols-3 lg:grid-cols-4">
-								{skills.map(({ name, image ,darkImage }) => (
+								{skills.map(({ name, image, darkImage }) => (
 									<motion.li key={name} whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}>
 										<SkillCard skillName={name} imageRoute={image} darkImage={darkImage} />
 									</motion.li>
