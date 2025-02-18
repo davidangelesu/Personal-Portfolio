@@ -32,9 +32,9 @@ export default function Skills({ allSkills }: { allSkills: { category: string; s
 							<h2 className=" my-2">{category}</h2>
 							<hr />
 							<ul className="grid grid-cols-3 lg:grid-cols-4">
-								{skills.map(({ name, image, darkImage }) => (
+								{skills.map(({ name, image, darkImage, link }) => (
 									<motion.li key={name} whileHover={{ zIndex: 1, scale: 1.05, transition: { duration: 0.2 } }}>
-										<SkillCard skillName={name} imageRoute={image} darkImage={darkImage} />
+										<SkillCard skillName={name} imageRoute={image} darkImage={darkImage} urlLink={link} />
 									</motion.li>
 								))}
 							</ul>

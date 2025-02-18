@@ -1,47 +1,73 @@
 {
-
-    "Programming Languages": [{
-        "name": "Typescript",
-        "image": "/images/skills/Typescript.png"
-    }, {
-        "name": "Javascript",
-        "image": "/images/skills/Javascript.png"
-    }, {
-        "name": "C++",
-        "image": "/images/skills/C++.png"
-    }, {
-        "name": "Python",
-        "image": "/images/skills/Python.png"
-    }],
-    "Front-End": [{
-        "name": "React",
-        "image": "/images/skills/React.png"
-    },
-    {
-        "name": "RxJS",
-        "image": "/images/skills/RxJS.svg"
-    },
-    {
-        "name": "InversifyJS",
-        "image": "/images/skills/inversifyJS.png"
-    }, {
-        "name": "Redux",
-        "image": "/images/skills/Redux.png"
-    }, {
-        "name": "Nextjs",
-        "image": "/images/skills/Nextjs.png"
-    }],
-    "Back-End": [{
-        "name": "Node.js",
-        "image": "/images/skills/Nodejs.png"
-    }, {
-        "name": "Express",
-        "image": "/images/skills/Express.png"
-    }, {
-        "name": "MongoDB",
-        "image": "/images/skills/MongoDB-Emblem.jpg"
-    }, {
-        "name": "MySQL",
-        "image": "/images/skills/Mysql_logo.png"
-    }]
+    "Programming Languages": [
+        {
+            "name": "Typescript",
+            "image": "/images/skills/Typescript.png",
+            "link": "https://www.typescriptlang.org/"
+        },
+        {
+            "name": "Javascript",
+            "image": "/images/skills/Javascript.png",
+            "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        },
+        {
+            "name": "C++",
+            "image": "/images/skills/C++.png",
+            "link": "https://isocpp.org/"
+        },
+        {
+            "name": "Python",
+            "image": "/images/skills/Python.png",
+            "link": "https://www.python.org/"
+        }
+    ],
+    "Front-End": [
+        {
+            "name": "React",
+            "image": "/images/skills/React.png",
+            "link": "https://react.dev/"
+        },
+        {
+            "name": "RxJS",
+            "image": "/images/skills/RxJS.svg",
+            "link": "https://rxjs.dev/"
+        },
+        {
+            "name": "InversifyJS",
+            "image": "/images/skills/inversifyJS.png",
+            "link": "https://inversify.io/"
+        },
+        {
+            "name": "Redux",
+            "image": "/images/skills/Redux.png",
+            "link": "https://redux.js.org/"
+        },
+        {
+            "name": "Nextjs",
+            "image": "/images/skills/Nextjs.png",
+            "link": "https://nextjs.org/"
+        }
+    ],
+    "Back-End": [
+        {
+            "name": "Node.js",
+            "image": "/images/skills/Nodejs.png",
+            "link": "https://nodejs.org/"
+        },
+        {
+            "name": "Express",
+            "image": "/images/skills/Express.png",
+            "link": "https://expressjs.com/"
+        },
+        {
+            "name": "MongoDB",
+            "image": "/images/skills/MongoDB-Emblem.jpg",
+            "link": "https://www.mongodb.com/"
+        },
+        {
+            "name": "MySQL",
+            "image": "/images/skills/Mysql_logo.png",
+            "link": "https://www.mysql.com/"
+        }
+    ]
 }
