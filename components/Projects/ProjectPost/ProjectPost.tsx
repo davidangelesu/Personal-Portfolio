@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Layout from "../../Layout/mainLayout/layout";
 import ProjectTitle from "../ProjectTitle/ProjectTitle";
 import PhotoGallery from "../../PhotoGallery/PhotoGallery";
@@ -17,9 +16,7 @@ const customComponents: MDXComponents = {
 	p: (props) => <p className="my-3.5" {...props}></p>,
 };
 
-const ProjectPost: FunctionComponent<PropsWithChildren<ProjectPostProps>> = ({ children, ...props }) => {
-	console.log("!!!props")
-	console.log(props)
+const ProjectPost: FunctionComponent<PropsWithChildren<ProjectPostProps>> = ({ children, meta }) => {
 	//define Main Image;
 	let mainImage: JSX.Element | undefined = undefined;
 	if (meta.images) {

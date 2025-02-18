@@ -1,21 +1,16 @@
 import { fetchPostsIds } from "../../lib/projects";
 import React, { FunctionComponent } from "react";
 import dynamic from "next/dynamic";
-import fs from 'fs';
-import path from 'path';
 import { getMeta } from "../../lib/getMeta";
-
-
 interface Props {
 	meta: ProjectPostMeta;
 	id: string;
 }
 const ProjectPost: FunctionComponent<Props> = ({ id, meta }) => {
-	const Mdx = dynamic(() => import(`../../content/projects/${id}.mdx`));
-
+	const Mdx = dynamic<{ meta: unknown }>(() => import(`../../content/projects/${id}.mdx`));
 	return (
 		<div>
-			<Mdx />
+			<Mdx meta={meta} />
 		</div>
 	);
 };
